@@ -21,10 +21,9 @@ const EXPERIENCES: {
     eyebrow: 'Customer',
     title: 'Discover handmade',
     features: [
-      'Explore unique products',
-      'Find meaningful gifts',
-      'Customize products',
-      'Connect with creators',
+      'Find unique products',
+      'Meaningful gifts',
+      'Custom creations',
     ],
     actionLabel: 'Continue as Customer →',
   },
@@ -35,9 +34,8 @@ const EXPERIENCES: {
     title: 'Turn your craft into a business',
     features: [
       'Showcase your creations',
-      'Get custom orders',
-      'Manage products & orders',
-      'Reach more customers',
+      'Receive orders',
+      'Grow your craft business',
     ],
     actionLabel: 'Continue as Seller →',
   },
@@ -60,12 +58,12 @@ export function RoleScreen() {
         keyboardShouldPersistTaps="handled"
       >
         <View style={styles.header}>
-          <Logo size="sm" />
+          <Logo size="sm" showTagline={false} />
         </View>
 
         <View style={styles.headingBlock}>
-          <Text style={styles.heading}>How will you use KARIGAAR?</Text>
-          <Text style={styles.subtitle}>Choose your experience. You can switch roles later.</Text>
+          <Text style={styles.heading}>What brings you to KARIGAAR?</Text>
+          <Text style={styles.subtitle}>Choose your experience.</Text>
         </View>
 
         <View style={styles.cards}>

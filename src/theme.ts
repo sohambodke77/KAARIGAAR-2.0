@@ -1,21 +1,49 @@
 export const colors = {
-  background: '#0A0A0C',
-  surface: '#131318',
-  surfaceAlt: '#17171D',
-  surfaceDeep: '#0E0E12',
+  background: '#120B07',
+  surface: '#1E140E',
+  surfaceAlt: '#271A12',
+  surfaceDeep: '#160E09',
 
-  gold: '#C9A44C',
-  goldBright: '#E6C97E',
+  // Walnut & Chocolate Browns
+  walnut: '#1F140E',
+  walnutDark: '#140C07',
+  chocolate: '#372317',
+  chocolateDark: '#2A1A10',
+  caramel: '#8B5E34',
+  caramelWarm: '#A77038',
+
+  // Warm Golds
+  gold: '#D4A359',
+  goldBright: '#F0C875',
+  goldGradientStart: '#D9A94A',
+  goldGradientEnd: '#F0C875',
   goldDeep: '#A9823A',
-  goldDim: 'rgba(201, 164, 76, 0.30)',
-  goldFaint: 'rgba(201, 164, 76, 0.10)',
-  goldSoft: 'rgba(201, 164, 76, 0.16)',
+  goldBorder: 'rgba(220, 175, 95, 0.30)',
+  goldBorderFocus: 'rgba(230, 194, 122, 0.85)',
+  goldDim: 'rgba(212, 163, 89, 0.32)',
+  goldFaint: 'rgba(212, 163, 89, 0.12)',
+  goldSoft: 'rgba(212, 163, 89, 0.20)',
 
-  cream: '#F3ECDD',
-  creamDim: 'rgba(243, 236, 221, 0.66)',
-  creamFaint: 'rgba(243, 236, 221, 0.40)',
-  line: 'rgba(243, 236, 221, 0.10)',
-  lineStrong: 'rgba(243, 236, 221, 0.18)',
+  // Cream & Ivory
+  cream: '#FAF6F0',
+  creamMuted: '#EDE4D3',
+  creamDim: 'rgba(250, 246, 240, 0.70)',
+  creamFaint: 'rgba(250, 246, 240, 0.45)',
+  beige: '#D9CBB7',
+
+  // Glassmorphism Card
+  glassCard: 'rgba(55, 35, 23, 0.65)',
+  glassCardBorder: 'rgba(220, 175, 95, 0.30)',
+  glassButton: 'rgba(40, 24, 15, 0.50)',
+
+  // Form Elements
+  inputBorder: 'rgba(220, 175, 95, 0.35)',
+  inputBorderActive: '#E6C27A',
+  inputPlaceholder: 'rgba(237, 228, 211, 0.50)',
+  buttonText: '#2A1A10',
+
+  line: 'rgba(250, 246, 240, 0.12)',
+  lineStrong: 'rgba(220, 175, 95, 0.30)',
 
   danger: '#E26D5C',
 } as const;
