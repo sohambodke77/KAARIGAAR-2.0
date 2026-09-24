@@ -1,15 +1,26 @@
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
-import { DefaultTheme, NavigationContainer, type Theme } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {
+  DefaultTheme,
+  NavigationContainer,
+  useNavigation,
+  type LinkingOptions,
+  type Theme,
+} from '@react-navigation/native';
+import { createNativeStackNavigator, type NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useEffect } from 'react';
 
 import { useAuth } from '../context/AuthContext';
-import { colors } from '../theme';
-import type { AppStackParamList, AuthStackParamList, OnboardingStackParamList } from './types';
-import { CustomerHomeScreen } from '../screens/CustomerHomeScreen';
-import { ProfileScreen } from '../screens/ProfileScreen';
-import { RoleScreen } from '../screens/RoleScreen';
-import { SellerDashboardScreen } from '../screens/SellerDashboardScreen';
+import { colors, light } from '../theme';
+import {
+  type AppStackParamList,
+  type AuthStackParamList,
+  type OnboardingStackParamList,
+  type RootParamList,
+} from './types';
 import { WelcomeScreen } from '../screens/WelcomeScreen';
+import { RoleScreen } from '../screens/RoleScreen';
+import { CustomerNavigator } from './CustomerNavigator';
+import { CreatorNavigator } from './CreatorNavigator';
 
 const AuthStack = createNativeStackNavigator<AuthStackParamList>();
 const OnboardingStack = createNativeStackNavigator<OnboardingStackParamList>();
@@ -29,10 +40,57 @@ const navTheme: Theme = {
   },
 };
 
-const stackScreenOptions = {
+const darkStackOptions = {
   headerShown: false,
   contentStyle: { backgroundColor: colors.background },
 } as const;
+
+export const linking: LinkingOptions<RootParamList> = {
+  prefixes: [],
+  config: {
+    screens: {
+      Welcome: 'login',
+      ChooseRole: 'role-selection',
+      Customer: {
+        screens: {
+          Tabs: {
+            screens: {
+              HomeTab: 'home',
+              ExploreTab: 'explore',
+              CreateTab: 'create',
+              OrdersTab: 'my-orders',
+              ProfileTab: 'my-profile',
+            },
+          },
+          Category: 'category/:id',
+          Product: 'product/:id',
+          Creator: 'creator/:id',
+          Customize: 'customize/:id',
+          FindMyMaker: 'find-my-maker',
+          Stories: 'stories',
+          StoryDetail: 'stories/:id',
+          Cart: 'cart',
+          Checkout: 'checkout',
+          OrderDetail: 'orders/:orderId',
+          Wishlist: 'wishlist',
+          Settings: 'settings',
+        },
+      },
+      Creator: {
+        screens: {
+          Dashboard: 'creator',
+          Products: 'creator/products',
+          ProductNew: 'creator/products/new',
+          CreatorOrders: 'creator/orders',
+          CustomRequests: 'creator/custom-requests',
+          Messages: 'creator/messages',
+          Analytics: 'creator/analytics',
+          CreatorProfile: 'creator/profile',
+        },
+      },
+    },
+  },
+};
 
 export function RootNavigator() {
   const { hydrated, user, activeRole } = useAuth();
@@ -46,7 +104,7 @@ export function RootNavigator() {
   }
 
   return (
-    <NavigationContainer theme={navTheme}>
+    <NavigationContainer theme={navTheme} linking={linking}>
       {!user ? <AuthFlow /> : !activeRole ? <OnboardingFlow /> : <AppFlow />}
     </NavigationContainer>
   );
@@ -54,7 +112,7 @@ export function RootNavigator() {
 
 function AuthFlow() {
   return (
-    <AuthStack.Navigator screenOptions={stackScreenOptions}>
+    <AuthStack.Navigator screenOptions={darkStackOptions}>
       <AuthStack.Screen name="Welcome" component={WelcomeScreen} />
     </AuthStack.Navigator>
   );
@@ -62,7 +120,7 @@ function AuthFlow() {
 
 function OnboardingFlow() {
   return (
-    <OnboardingStack.Navigator screenOptions={stackScreenOptions}>
+    <OnboardingStack.Navigator screenOptions={darkStackOptions}>
       <OnboardingStack.Screen name="ChooseRole" component={RoleScreen} />
     </OnboardingStack.Navigator>
   );
@@ -70,20 +128,23 @@ function OnboardingFlow() {
 
 function AppFlow() {
   const { activeRole } = useAuth();
-  const initial = activeRole === 'seller' ? 'SellerDashboard' : 'CustomerHome';
+  const navigation = useNavigation<NativeStackNavigationProp<AppStackParamList>>();
+
+  useEffect(() => {
+    if (activeRole === 'customer') {
+      navigation.reset({ index: 0, routes: [{ name: 'Customer' }] });
+    } else if (activeRole === 'seller') {
+      navigation.reset({ index: 0, routes: [{ name: 'Creator' }] });
+    }
+  }, [activeRole, navigation]);
 
   return (
     <AppStack.Navigator
-      initialRouteName={initial}
-      screenOptions={{ ...stackScreenOptions, animation: 'slide_from_right' }}
+      initialRouteName={activeRole === 'customer' ? 'Customer' : 'Creator'}
+      screenOptions={{ headerShown: false, contentStyle: { backgroundColor: light.bg } }}
     >
-      <AppStack.Screen name="CustomerHome" component={CustomerHomeScreen} />
-      <AppStack.Screen name="SellerDashboard" component={SellerDashboardScreen} />
-      <AppStack.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={{ presentation: 'modal', animation: 'slide_from_bottom' }}
-      />
+      <AppStack.Screen name="Customer" component={CustomerNavigator} />
+      <AppStack.Screen name="Creator" component={CreatorNavigator} />
     </AppStack.Navigator>
   );
 }

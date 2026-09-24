@@ -63,6 +63,22 @@ export const fonts = {
   },
 } as const;
 
+// Light cream marketplace palette (customer & creator marketplace pages)
+export const light = {
+  bg: '#FAF4E9',
+  surface: '#FFFDF8',
+  surfaceAlt: '#F3E9D8',
+  surfaceDeep: '#EDE0C9',
+  ink: '#241A11',
+  inkMuted: '#7A6A57',
+  inkFaint: '#A89A85',
+  line: 'rgba(36, 26, 17, 0.10)',
+  lineStrong: 'rgba(36, 26, 17, 0.18)',
+  goldSoft: 'rgba(212, 163, 89, 0.16)',
+  goldMid: 'rgba(212, 163, 89, 0.38)',
+  danger: '#C05238',
+} as const;
+
 export const spacing = {
   xs: 4,
   sm: 8,
