@@ -246,7 +246,11 @@ export function WelcomeScreen() {
                 {/* 5. Email field */}
                 <UnderlineInput
                   leftIcon="mail-outline"
-                  rightIcon="mail-outline"
+                  rightAction={
+                    email.trim() && !emailError && isValidEmail(email) ? (
+                      <Ionicons name="checkmark-circle" size={20} color={colors.goldBright} />
+                    ) : null
+                  }
                   placeholder="Email"
                   value={email}
                   onChangeText={(val) => {
@@ -257,6 +261,7 @@ export function WelcomeScreen() {
                   autoCapitalize="none"
                   autoCorrect={false}
                   textContentType="emailAddress"
+                  accessibilityLabel="Email"
                   error={emailError}
                   editable={!busy}
                   returnKeyType="next"
@@ -276,6 +281,7 @@ export function WelcomeScreen() {
                   secureTextEntry={!showPassword}
                   autoCapitalize="none"
                   autoCorrect={false}
+                  accessibilityLabel="Password"
                   textContentType={mode === 'register' ? 'newPassword' : 'password'}
                   error={passwordError}
                   editable={!busy}
@@ -342,32 +348,35 @@ export function WelcomeScreen() {
                   </Pressable>
                 </View>
               </View>
-            </View>
 
-            {/* 11. Google Login Pill Button */}
-            <View style={styles.googleContainer}>
-              <GoogleButton onPress={handleGoogleSubmit} loading={busy === 'google'} />
-            </View>
+              {/* Divider before social login */}
+              <View style={styles.socialDivider} />
 
-            {/* 12. Terms & Privacy */}
-            <View style={styles.termsContainer}>
-              <Text style={styles.termsText}>
-                By continuing, you agree to our{' '}
-                <Text
-                  onPress={() => setShowPolicyModal('terms')}
-                  style={styles.termsLink}
-                >
-                  Terms
-                </Text>{' '}
-                &{' '}
-                <Text
-                  onPress={() => setShowPolicyModal('privacy')}
-                  style={styles.termsLink}
-                >
-                  Privacy Policy
+              {/* 11. Google Login Pill Button */}
+              <View style={styles.googleContainer}>
+                <GoogleButton onPress={handleGoogleSubmit} loading={busy === 'google'} />
+              </View>
+
+              {/* 12. Terms & Privacy */}
+              <View style={styles.termsContainer}>
+                <Text style={styles.termsText}>
+                  By continuing, you agree to our{' '}
+                  <Text
+                    onPress={() => setShowPolicyModal('terms')}
+                    style={styles.termsLink}
+                  >
+                    Terms
+                  </Text>{' '}
+                  &{' '}
+                  <Text
+                    onPress={() => setShowPolicyModal('privacy')}
+                    style={styles.termsLink}
+                  >
+                    Privacy Policy
+                  </Text>
+                  .
                 </Text>
-                .
-              </Text>
+              </View>
             </View>
           </Animated.View>
         </ScrollView>
@@ -591,6 +600,11 @@ const styles = StyleSheet.create({
     maxWidth: 340,
     marginTop: 22,
     alignSelf: 'center',
+  },
+  socialDivider: {
+    height: 1,
+    backgroundColor: colors.goldFaint,
+    marginTop: 24,
   },
   termsContainer: {
     marginTop: 18,
