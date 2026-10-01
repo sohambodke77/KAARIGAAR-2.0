@@ -86,10 +86,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           ]);
           setRoles([]);
           setActiveRole(null);
-        } else {
-          // Guide user to role selection on signin as specified
-          await AsyncStorage.removeItem(STORAGE.activeRole);
-          setActiveRole(null);
         }
       },
 
