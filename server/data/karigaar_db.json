@@ -1,0 +1,110 @@
+{
+  "users": [
+    {
+      "id": "usr_artisan_seed",
+      "fullName": "Meera Devi",
+      "email": "meera.artisan@kaarigaar.in",
+      "mobile": "9876543210",
+      "passwordHash": "18dd7c17f4130fb5c64ab049dc525e6f:01308480e9138c856f0b156d5d54ffdbbb1d3fe7482fe25abb92fdc67521334896360759442ca6040b6985175f89a3c6ad37f529785f389f44bf57b85b5f117d",
+      "role": "seller",
+      "roles": [
+        "customer",
+        "seller"
+      ],
+      "profilePhoto": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+      "isEmailVerified": true,
+      "isMobileVerified": true,
+      "verificationOtp": null,
+      "otpExpiresAt": null,
+      "resetToken": null,
+      "resetTokenExpiresAt": null,
+      "termsAccepted": true,
+      "createdAt": "2026-10-18T18:21:45.717Z",
+      "updatedAt": "2026-10-18T18:21:45.718Z"
+    },
+    {
+      "id": "usr_customer_seed",
+      "fullName": "Aarav Sharma",
+      "email": "aarav.customer@kaarigaar.in",
+      "mobile": "9812345678",
+      "passwordHash": "ddc7e87b7cc26f5a5cb1e299230cc0b6:a561927be934db11622135c7b77c421a07888251c24ed0fb4977db5d7e5ce28ab98559334b064e5c2614e915694a8cc8135bae73edb9eed61e602e737c9fe8a8",
+      "role": "customer",
+      "roles": [
+        "customer"
+      ],
+      "profilePhoto": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+      "isEmailVerified": true,
+      "isMobileVerified": true,
+      "verificationOtp": null,
+      "otpExpiresAt": null,
+      "resetToken": null,
+      "resetTokenExpiresAt": null,
+      "termsAccepted": true,
+      "createdAt": "2026-10-18T18:21:45.718Z",
+      "updatedAt": "2026-10-18T18:21:45.718Z"
+    }
+  ],
+  "creatorProfiles": [
+    {
+      "userId": "usr_artisan_seed",
+      "brandName": "Maati & Sunehra Studio",
+      "tagline": "Terracotta pottery and gold leaf art from Jaipur",
+      "description": "Master terracotta artisan carrying forward five generations of Rajasthani hand pottery traditions.",
+      "categories": [
+        "pottery",
+        "home-decor",
+        "paintings"
+      ],
+      "businessAddress": {
+        "street": "14, Kumhar Wada, Sanganer",
+        "city": "Jaipur",
+        "state": "Rajasthan",
+        "pincode": "302029"
+      },
+      "serviceArea": "Pan-India",
+      "bankDetails": {
+        "accountHolder": "Meera Devi",
+        "bankName": "State Bank of India",
+        "accountNumber": "XXXXXX4892",
+        "ifscCode": "SBIN0001234",
+        "upiId": "meera.artisan@sbi",
+        "isVerified": true
+      },
+      "taxDetails": {
+        "panNumber": "ABCDE1234F",
+        "gstin": "08ABCDE1234F1Z5",
+        "artisanCardNumber": "ART-RJ-2024-8831",
+        "isCompliant": true
+      },
+      "profilePhoto": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+      "onboardingStep": "completed",
+      "createdAt": "2026-10-18T18:21:45.718Z",
+      "updatedAt": "2026-10-18T18:21:45.718Z"
+    }
+  ],
+  "customerProfiles": [
+    {
+      "userId": "usr_customer_seed",
+      "addresses": [
+        {
+          "id": "addr_1",
+          "label": "Home",
+          "street": "Flat 402, Lotus Greens, Baner",
+          "city": "Pune",
+          "state": "Maharashtra",
+          "pincode": "411045",
+          "isDefault": true
+        }
+      ],
+      "preferences": {
+        "favoriteCategories": [
+          "crochet",
+          "candles",
+          "pottery"
+        ],
+        "newsletter": true
+      },
+      "createdAt": "2026-10-18T18:21:45.718Z"
+    }
+  ]
+}
