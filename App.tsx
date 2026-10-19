@@ -17,7 +17,7 @@ import {
 } from '@expo-google-fonts/playfair-display';
 
 import { AuthProvider } from './src/context/AuthContext';
-import { MarketplaceProvider } from './src/context/MarketplaceContext';
+import { MarketProvider } from './src/context/MarketContext';
 import { RootNavigator } from './src/navigation/RootNavigator';
 
 SplashScreen.preventAutoHideAsync().catch(() => {});
@@ -47,10 +47,10 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <AuthProvider>
-        <MarketplaceProvider>
-          <StatusBar style="dark" />
+        <MarketProvider>
+          <StatusBar style="light" />
           <RootNavigator />
-        </MarketplaceProvider>
+        </MarketProvider>
       </AuthProvider>
     </SafeAreaProvider>
   );

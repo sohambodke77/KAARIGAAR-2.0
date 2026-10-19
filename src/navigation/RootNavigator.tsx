@@ -93,7 +93,7 @@ export const linking: LinkingOptions<RootParamList> = {
 };
 
 export function RootNavigator() {
-  const { hydrated, user, activeRole } = useAuth();
+  const { hydrated, user, activeRole, guestMode } = useAuth();
 
   if (!hydrated) {
     return (
@@ -103,9 +103,17 @@ export function RootNavigator() {
     );
   }
 
+  const isGuest = guestMode && !user;
+
   return (
     <NavigationContainer theme={navTheme} linking={linking}>
-      {!user ? <AuthFlow /> : !activeRole ? <OnboardingFlow /> : <AppFlow />}
+      {!user && !isGuest ? (
+        <AuthFlow />
+      ) : !activeRole && !isGuest ? (
+        <OnboardingFlow />
+      ) : (
+        <AppFlow />
+      )}
     </NavigationContainer>
   );
 }
@@ -127,20 +135,21 @@ function OnboardingFlow() {
 }
 
 function AppFlow() {
-  const { activeRole } = useAuth();
+  const { activeRole, user } = useAuth();
   const navigation = useNavigation<NativeStackNavigationProp<AppStackParamList>>();
+  const effectiveRole = user ? activeRole : 'customer';
 
   useEffect(() => {
-    if (activeRole === 'customer') {
+    if (effectiveRole === 'customer') {
       navigation.reset({ index: 0, routes: [{ name: 'Customer' }] });
-    } else if (activeRole === 'seller') {
+    } else if (effectiveRole === 'seller') {
       navigation.reset({ index: 0, routes: [{ name: 'Creator' }] });
     }
-  }, [activeRole, navigation]);
+  }, [effectiveRole, navigation]);
 
   return (
     <AppStack.Navigator
-      initialRouteName={activeRole === 'customer' ? 'Customer' : 'Creator'}
+      initialRouteName={effectiveRole === 'customer' ? 'Customer' : 'Creator'}
       screenOptions={{ headerShown: false, contentStyle: { backgroundColor: light.bg } }}
     >
       <AppStack.Screen name="Customer" component={CustomerNavigator} />
