@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
+import { api } from '../services/apiClient';
 
 export interface Category {
   id: string;
@@ -87,6 +88,18 @@ export interface CartItem {
   selectedColor?: string;
 }
 
+export interface SavedDeliveryAddress {
+  id: string;
+  name: string;
+  phone: string;
+  address: string;
+  locality: string;
+  city: string;
+  pincode: string;
+  tag: 'Home' | 'Work' | 'Other';
+  isDefault: boolean;
+}
+
 export interface OrderTimelineStep {
   title: string;
   description: string;
@@ -97,13 +110,15 @@ export interface OrderTimelineStep {
 
 export interface Order {
   id: string;
+  orderNumber?: string;
   date: string;
   items: CartItem[];
   totalAmount: number;
   subtotal: number;
   deliveryFee: number;
   discount: number;
-  status: 'Processing' | 'Ready to Ship' | 'Shipped' | 'Delivered';
+  status: 'Processing' | 'In Studio' | 'Quality Checked' | 'Ready to Ship' | 'Shipped' | 'Delivered' | 'Cancelled' | 'Refunded';
+  paymentStatus: 'Pending' | 'Paid' | 'Failed' | 'Refunded' | 'Partially Refunded' | 'COD Confirmed' | 'COD — Payment Pending';
   deliveryAddress: {
     name: string;
     phone: string;
@@ -112,9 +127,14 @@ export interface Order {
     locality: string;
     pincode: string;
   };
+  deliveryType?: 'standard' | 'express';
   paymentMethod: string;
+  gatewayOrderId?: string;
+  gatewayPaymentId?: string;
   estimatedDelivery: string;
   trackingNumber: string;
+  courierPartner?: string;
+  taxGst?: number;
   timeline: OrderTimelineStep[];
 }
 
@@ -157,6 +177,13 @@ interface MarketplaceContextValue {
   stories: Story[];
   selectedLocation: string;
   activeSearchQuery: string;
+  savedAddresses: SavedDeliveryAddress[];
+
+  // Address Actions
+  addSavedAddress: (addr: Omit<SavedDeliveryAddress, 'id'>) => SavedDeliveryAddress;
+  updateSavedAddress: (id: string, addr: Partial<SavedDeliveryAddress>) => void;
+  deleteSavedAddress: (id: string) => void;
+  setDefaultAddress: (id: string) => void;
 
   // Actions
   setSelectedLocation: (loc: string) => void;
@@ -169,10 +196,30 @@ interface MarketplaceContextValue {
   clearCart: () => void;
   getCartCount: () => number;
   getCartSubtotal: () => number;
-  createOrder: (address: Order['deliveryAddress'], paymentMethod: string, discount: number) => string;
+  createOrder: (address: Order['deliveryAddress'], paymentMethod: string, discount?: number) => string;
+  createBackendOrder: (params: {
+    address: Order['deliveryAddress'];
+    deliveryType: 'standard' | 'express';
+    paymentMethod: string;
+    couponCode?: string;
+  }) => Promise<{ orderId: string; orderNumber: string; totalAmount: number }>;
+  verifyPaymentAndConfirm: (params: {
+    orderId: string;
+    razorpayOrderId: string;
+    razorpayPaymentId: string;
+    razorpaySignature: string;
+    paymentMethod: string;
+    paymentDetails?: any;
+  }) => Promise<{ success: boolean; orderId: string }>;
+  retryOrderPayment: (orderId: string) => Promise<any>;
+  cancelOrderWithRefund: (orderId: string, reason: string) => Promise<any>;
+  requestOrderRefund: (orderId: string, reason: string, amount?: number) => Promise<any>;
+  confirmCodOrder: (orderId: string, otp: string) => Promise<any>;
+  fetchOrderInvoice: (orderId: string) => Promise<any>;
   submitCustomBrief: (brief: Omit<CustomBrief, 'id' | 'status' | 'createdAt'>) => void;
   addNewProduct: (productData: Partial<Product>) => Product;
-  updateOrderStatus: (orderId: string, nextStatus: Order['status']) => void;
+  updateOrderStatus: (orderId: string, nextStatus: Order['status'], trackingNumber?: string, courier?: string) => void;
+  refreshOrders: () => Promise<void>;
 }
 
 // Initial Demo Data
@@ -769,9 +816,35 @@ const INITIAL_STORIES: Story[] = [
   },
 ];
 
+const INITIAL_SAVED_ADDRESSES: SavedDeliveryAddress[] = [
+  {
+    id: 'addr_1',
+    name: 'Sanket Joshi',
+    phone: '+91 98220 45678',
+    address: 'Flat 402, Mayur Heights, Paud Road',
+    locality: 'Kothrud',
+    city: 'Pune',
+    pincode: '411038',
+    tag: 'Home',
+    isDefault: true,
+  },
+  {
+    id: 'addr_2',
+    name: 'Sanket Joshi',
+    phone: '+91 98220 45678',
+    address: 'Workshop Unit 12, Senapati Bapat Road',
+    locality: 'Shivaji Nagar',
+    city: 'Pune',
+    pincode: '411016',
+    tag: 'Work',
+    isDefault: false,
+  },
+];
+
 const INITIAL_ORDERS: Order[] = [
   {
-    id: 'KG-89210',
+    id: 'kg_ord_89210',
+    orderNumber: 'KG-89210',
     date: '24 Sep 2026',
     items: [
       {
@@ -790,17 +863,21 @@ const INITIAL_ORDERS: Order[] = [
     deliveryFee: 0,
     discount: 0,
     status: 'Ready to Ship',
+    paymentStatus: 'Paid',
     deliveryAddress: {
       name: 'Sanket Joshi',
-      phone: '+91 98220 12345',
-      address: 'Flat 402, Mayur Heights, Kothrud',
+      phone: '+91 98220 45678',
+      address: 'Flat 402, Mayur Heights, Paud Road',
       city: 'Pune',
       locality: 'Kothrud',
       pincode: '411038',
     },
     paymentMethod: 'UPI (Google Pay)',
+    gatewayOrderId: 'order_KG89210_RZP',
+    gatewayPaymentId: 'pay_KG89210_RZP_01',
     estimatedDelivery: '28 Sep 2026',
     trackingNumber: 'DEL-PUN-982104',
+    courierPartner: 'Pune Artisan Express Delivery',
     timeline: [
       {
         title: 'Order Placed & Confirmed',
@@ -840,7 +917,8 @@ const INITIAL_ORDERS: Order[] = [
     ],
   },
   {
-    id: 'KG-76540',
+    id: 'kg_ord_76540',
+    orderNumber: 'KG-76540',
     date: '18 Sep 2026',
     items: [
       {
@@ -854,10 +932,11 @@ const INITIAL_ORDERS: Order[] = [
     deliveryFee: 0,
     discount: 0,
     status: 'Delivered',
+    paymentStatus: 'COD Confirmed',
     deliveryAddress: {
       name: 'Sanket Joshi',
-      phone: '+91 98220 12345',
-      address: 'Flat 402, Mayur Heights, Kothrud',
+      phone: '+91 98220 45678',
+      address: 'Flat 402, Mayur Heights, Paud Road',
       city: 'Pune',
       locality: 'Kothrud',
       pincode: '411038',
@@ -865,6 +944,7 @@ const INITIAL_ORDERS: Order[] = [
     paymentMethod: 'Cash on Delivery',
     estimatedDelivery: '21 Sep 2026',
     trackingNumber: 'DEL-PUN-765401',
+    courierPartner: 'Pune Artisan Express Delivery',
     timeline: [
       {
         title: 'Delivered Successfully',
@@ -884,6 +964,7 @@ const STORAGE_KEYS = {
   products: '@kaarigaar/custom_products',
   location: '@kaarigaar/selected_location',
   briefs: '@kaarigaar/custom_briefs',
+  addresses: '@kaarigaar/saved_addresses',
 } as const;
 
 const MarketplaceContext = createContext<MarketplaceContextValue | null>(null);
@@ -906,18 +987,20 @@ export function MarketplaceProvider({ children }: { children: ReactNode }) {
   const [stories] = useState<Story[]>(INITIAL_STORIES);
   const [selectedLocation, setSelectedLocationState] = useState<string>('Pune');
   const [activeSearchQuery, setActiveSearchQuery] = useState<string>('');
+  const [savedAddresses, setSavedAddresses] = useState<SavedDeliveryAddress[]>(INITIAL_SAVED_ADDRESSES);
 
   // Hydrate persisted state
   useEffect(() => {
     (async () => {
       try {
-        const [wRaw, cRaw, oRaw, pRaw, locRaw, bRaw] = await Promise.all([
+        const [wRaw, cRaw, oRaw, pRaw, locRaw, bRaw, addrRaw] = await Promise.all([
           AsyncStorage.getItem(STORAGE_KEYS.wishlist),
           AsyncStorage.getItem(STORAGE_KEYS.cart),
           AsyncStorage.getItem(STORAGE_KEYS.orders),
           AsyncStorage.getItem(STORAGE_KEYS.products),
           AsyncStorage.getItem(STORAGE_KEYS.location),
           AsyncStorage.getItem(STORAGE_KEYS.briefs),
+          AsyncStorage.getItem(STORAGE_KEYS.addresses),
         ]);
 
         if (wRaw) setWishlist(JSON.parse(wRaw));
@@ -925,6 +1008,7 @@ export function MarketplaceProvider({ children }: { children: ReactNode }) {
         if (oRaw) setOrders(JSON.parse(oRaw));
         if (locRaw) setSelectedLocationState(locRaw);
         if (bRaw) setCustomBriefs(JSON.parse(bRaw));
+        if (addrRaw) setSavedAddresses(JSON.parse(addrRaw));
 
         if (pRaw) {
           const userProducts = JSON.parse(pRaw) as Product[];
@@ -1018,6 +1102,52 @@ export function MarketplaceProvider({ children }: { children: ReactNode }) {
     }, 0);
   };
 
+  // Address Management
+  const addSavedAddress = (addrData: Omit<SavedDeliveryAddress, 'id'>): SavedDeliveryAddress => {
+    const newAddr: SavedDeliveryAddress = {
+      ...addrData,
+      id: `addr_${Date.now()}`,
+    };
+    setSavedAddresses((prev) => {
+      const next = addrData.isDefault ? prev.map((a) => ({ ...a, isDefault: false })) : [...prev];
+      const updated = [newAddr, ...next];
+      AsyncStorage.setItem(STORAGE_KEYS.addresses, JSON.stringify(updated)).catch(() => {});
+      return updated;
+    });
+    return newAddr;
+  };
+
+  const updateSavedAddress = (id: string, addrPatch: Partial<SavedDeliveryAddress>) => {
+    setSavedAddresses((prev) => {
+      let next = prev.map((a) => (a.id === id ? { ...a, ...addrPatch } : a));
+      if (addrPatch.isDefault) {
+        next = next.map((a) => (a.id === id ? a : { ...a, isDefault: false }));
+      }
+      AsyncStorage.setItem(STORAGE_KEYS.addresses, JSON.stringify(next)).catch(() => {});
+      return next;
+    });
+  };
+
+  const deleteSavedAddress = (id: string) => {
+    setSavedAddresses((prev) => {
+      const next = prev.filter((a) => a.id !== id);
+      if (next.length > 0 && !next.some((a) => a.isDefault)) {
+        next[0].isDefault = true;
+      }
+      AsyncStorage.setItem(STORAGE_KEYS.addresses, JSON.stringify(next)).catch(() => {});
+      return next;
+    });
+  };
+
+  const setDefaultAddress = (id: string) => {
+    setSavedAddresses((prev) => {
+      const next = prev.map((a) => ({ ...a, isDefault: a.id === id }));
+      AsyncStorage.setItem(STORAGE_KEYS.addresses, JSON.stringify(next)).catch(() => {});
+      return next;
+    });
+  };
+
+  // Synchronous local createOrder for backward compatibility
   const createOrder = (
     address: Order['deliveryAddress'],
     paymentMethod: string,
@@ -1026,10 +1156,12 @@ export function MarketplaceProvider({ children }: { children: ReactNode }) {
     const subtotal = getCartSubtotal();
     const deliveryFee = subtotal >= 499 ? 0 : 49;
     const totalAmount = Math.max(0, subtotal + deliveryFee - discount);
-    const orderId = `KG-${Math.floor(10000 + Math.random() * 90000)}`;
+    const orderNumber = `KG-${Math.floor(10000 + Math.random() * 90000)}`;
+    const orderId = `kg_ord_${Date.now()}`;
 
     const newOrder: Order = {
       id: orderId,
+      orderNumber,
       date: 'Today',
       items: [...cart],
       totalAmount,
@@ -1037,14 +1169,17 @@ export function MarketplaceProvider({ children }: { children: ReactNode }) {
       deliveryFee,
       discount,
       status: 'Processing',
+      paymentStatus: paymentMethod === 'COD' ? 'COD Confirmed' : 'Paid',
       deliveryAddress: address,
       paymentMethod,
       estimatedDelivery: '3 to 5 business days',
       trackingNumber: `DEL-PUN-${Math.floor(100000 + Math.random() * 900000)}`,
+      courierPartner: 'Pune Artisan Express Delivery',
+      taxGst: Math.round(subtotal * 0.05 * 100) / 100,
       timeline: [
         {
           title: 'Order Placed & Confirmed',
-          description: `Payment received via ${paymentMethod}. Maker notified.`,
+          description: `Payment confirmed via ${paymentMethod}. Maker notified.`,
           date: 'Just now',
           completed: true,
           current: true,
@@ -1081,6 +1216,206 @@ export function MarketplaceProvider({ children }: { children: ReactNode }) {
 
     clearCart();
     return orderId;
+  };
+
+  // Backend Order Creation with Server Validation
+  const createBackendOrder = async (params: {
+    address: Order['deliveryAddress'];
+    deliveryType: 'standard' | 'express';
+    paymentMethod: string;
+    couponCode?: string;
+  }): Promise<{ orderId: string; orderNumber: string; totalAmount: number }> => {
+    const res = await api.createOrder({
+      items: cart.map((it) => ({
+        productId: it.product.id,
+        productName: it.product.name,
+        categoryId: it.product.categoryId,
+        creatorId: it.product.creatorId,
+        creatorName: it.product.creatorName,
+        unitPrice: it.product.price,
+        quantity: it.quantity,
+        customization: it.customization,
+      })),
+      deliveryAddress: params.address,
+      deliveryType: params.deliveryType,
+      couponCode: params.couponCode,
+      paymentMethod: params.paymentMethod,
+    });
+
+    const backendOrder = res.order;
+    const newOrder: Order = {
+      id: backendOrder.id,
+      orderNumber: backendOrder.orderNumber,
+      date: 'Today',
+      items: [...cart],
+      totalAmount: backendOrder.totalAmount,
+      subtotal: backendOrder.subtotal,
+      deliveryFee: backendOrder.deliveryFee,
+      discount: backendOrder.discount,
+      status: backendOrder.status,
+      paymentStatus: backendOrder.paymentStatus,
+      deliveryAddress: params.address,
+      deliveryType: params.deliveryType,
+      paymentMethod: params.paymentMethod,
+      trackingNumber: backendOrder.trackingNumber,
+      courierPartner: backendOrder.courierPartner,
+      estimatedDelivery: backendOrder.estimatedDelivery,
+      taxGst: backendOrder.taxGst,
+      timeline: [
+        {
+          title: 'Order Placed & Confirmed',
+          description: `Payment ${backendOrder.paymentStatus} via ${params.paymentMethod}. Maker notified.`,
+          date: 'Just now',
+          completed: true,
+          current: true,
+        },
+        {
+          title: 'In the Maker’s Studio',
+          description: 'Being handcrafted and personalized with care.',
+          date: 'Pending',
+          completed: false,
+          current: false,
+        },
+        {
+          title: 'Quality Check & Packed',
+          description: 'Passed artisanal finishing and packed in eco-friendly wraps.',
+          date: 'Pending',
+          completed: false,
+          current: false,
+        },
+        {
+          title: 'Out for Delivery',
+          description: `Dispatched with ${backendOrder.courierPartner || 'Pune courier partner'}.`,
+          date: 'Pending',
+          completed: false,
+          current: false,
+        },
+      ],
+    };
+
+    setOrders((prev) => {
+      const next = [newOrder, ...prev.filter((o) => o.id !== newOrder.id)];
+      AsyncStorage.setItem(STORAGE_KEYS.orders, JSON.stringify(next)).catch(() => {});
+      return next;
+    });
+
+    clearCart();
+    return {
+      orderId: backendOrder.id,
+      orderNumber: backendOrder.orderNumber,
+      totalAmount: backendOrder.totalAmount,
+    };
+  };
+
+  const verifyPaymentAndConfirm = async (params: {
+    orderId: string;
+    razorpayOrderId: string;
+    razorpayPaymentId: string;
+    razorpaySignature: string;
+    paymentMethod: string;
+    paymentDetails?: any;
+  }) => {
+    const result = await api.verifyPayment(params);
+    if (result.success) {
+      setOrders((prev) => {
+        const next = prev.map((ord) =>
+          ord.id === params.orderId || ord.orderNumber === params.orderId
+            ? {
+                ...ord,
+                paymentStatus: 'Paid' as const,
+                status: 'Processing' as const,
+                gatewayOrderId: params.razorpayOrderId,
+                gatewayPaymentId: params.razorpayPaymentId,
+                paymentMethod: params.paymentMethod,
+              }
+            : ord
+        );
+        AsyncStorage.setItem(STORAGE_KEYS.orders, JSON.stringify(next)).catch(() => {});
+        return next;
+      });
+    }
+    return { success: result.success, orderId: params.orderId };
+  };
+
+  const retryOrderPayment = async (orderId: string) => {
+    return await api.retryPayment(orderId);
+  };
+
+  const cancelOrderWithRefund = async (orderId: string, reason: string) => {
+    const res = await api.cancelOrder(orderId, reason);
+    setOrders((prev) => {
+      const next = prev.map((ord) =>
+        ord.id === orderId || ord.orderNumber === orderId
+          ? {
+              ...ord,
+              status: 'Cancelled' as const,
+              paymentStatus: (ord.paymentStatus === 'Paid' ? 'Refunded' : 'Cancelled') as any,
+            }
+          : ord
+      );
+      AsyncStorage.setItem(STORAGE_KEYS.orders, JSON.stringify(next)).catch(() => {});
+      return next;
+    });
+    return res;
+  };
+
+  const requestOrderRefund = async (orderId: string, reason: string, amount?: number) => {
+    const online = await api.checkHealth();
+    if (online) {
+      const res = await fetch(`http://localhost:5000/api/orders/${orderId}/refund-request`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ reason, refundAmount: amount }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Refund request failed');
+      return data;
+    }
+    return { success: true, message: 'Refund request registered' };
+  };
+
+  const confirmCodOrder = async (orderId: string, otp: string) => {
+    const res = await api.confirmCod(orderId, otp);
+    setOrders((prev) => {
+      const next = prev.map((ord) =>
+        ord.id === orderId || ord.orderNumber === orderId
+          ? {
+              ...ord,
+              status: 'Processing' as const,
+              paymentStatus: 'COD Confirmed' as const,
+              paymentMethod: 'Cash on Delivery',
+            }
+          : ord
+      );
+      AsyncStorage.setItem(STORAGE_KEYS.orders, JSON.stringify(next)).catch(() => {});
+      return next;
+    });
+    return res;
+  };
+
+  const fetchOrderInvoice = async (orderId: string) => {
+    return await api.getInvoice(orderId);
+  };
+
+  const refreshOrders = async () => {
+    try {
+      const online = await api.checkHealth();
+      if (online) {
+        const res = await fetch(`http://localhost:5000/api/orders`);
+        const data = await res.json();
+        if (data.success && data.orders) {
+          setOrders((prev) => {
+            const combined = [...data.orders];
+            for (const localOrd of prev) {
+              if (!combined.some((o: any) => o.id === localOrd.id || o.orderNumber === localOrd.id)) {
+                combined.push(localOrd);
+              }
+            }
+            return combined;
+          });
+        }
+      }
+    } catch {}
   };
 
   const submitCustomBrief = (briefData: Omit<CustomBrief, 'id' | 'status' | 'createdAt'>) => {
@@ -1151,9 +1486,25 @@ export function MarketplaceProvider({ children }: { children: ReactNode }) {
     return newProd;
   };
 
-  const updateOrderStatus = (orderId: string, nextStatus: Order['status']) => {
+  const updateOrderStatus = (
+    orderId: string,
+    nextStatus: Order['status'],
+    trackingNumber?: string,
+    courier?: string
+  ) => {
+    // Notify backend
+    api.updateOrderStatus(orderId, nextStatus, trackingNumber, courier).catch(() => {});
+
     setOrders((prev) => {
-      const next = prev.map((ord) => (ord.id === orderId ? { ...ord, status: nextStatus } : ord));
+      const next = prev.map((ord) => {
+        if (ord.id === orderId || ord.orderNumber === orderId) {
+          const patch: Partial<Order> = { status: nextStatus };
+          if (trackingNumber) patch.trackingNumber = trackingNumber;
+          if (courier) patch.courierPartner = courier;
+          return { ...ord, ...patch };
+        }
+        return ord;
+      });
       AsyncStorage.setItem(STORAGE_KEYS.orders, JSON.stringify(next)).catch(() => {});
       return next;
     });
@@ -1172,6 +1523,11 @@ export function MarketplaceProvider({ children }: { children: ReactNode }) {
         stories,
         selectedLocation,
         activeSearchQuery,
+        savedAddresses,
+        addSavedAddress,
+        updateSavedAddress,
+        deleteSavedAddress,
+        setDefaultAddress,
         setSelectedLocation,
         setActiveSearchQuery,
         toggleWishlist,
@@ -1183,6 +1539,14 @@ export function MarketplaceProvider({ children }: { children: ReactNode }) {
         getCartCount,
         getCartSubtotal,
         createOrder,
+        createBackendOrder,
+        verifyPaymentAndConfirm,
+        retryOrderPayment,
+        cancelOrderWithRefund,
+        requestOrderRefund,
+        confirmCodOrder,
+        fetchOrderInvoice,
+        refreshOrders,
         submitCustomBrief,
         addNewProduct,
         updateOrderStatus,

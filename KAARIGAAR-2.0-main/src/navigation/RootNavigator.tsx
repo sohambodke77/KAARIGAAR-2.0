@@ -8,6 +8,7 @@ import type { AppStackParamList, AuthStackParamList, OnboardingStackParamList } 
 
 // Screens
 import { AddProductScreen } from '../screens/AddProductScreen';
+import { AdminDashboardScreen } from '../screens/AdminDashboardScreen';
 import { CartScreen } from '../screens/CartScreen';
 import { CategoryScreen } from '../screens/CategoryScreen';
 import { CheckoutScreen } from '../screens/CheckoutScreen';
@@ -111,9 +112,10 @@ function AppFlow() {
       <AppStack.Screen name="Profile" component={ProfileScreen} />
       <AppStack.Screen name="CreatorProfile" component={CreatorProfileScreen} />
 
-      {/* Creator Hub Screens */}
+      {/* Creator & Admin Hub Screens */}
       <AppStack.Screen name="SellerDashboard" component={SellerDashboardScreen} />
       <AppStack.Screen name="AddProduct" component={AddProductScreen} />
+      <AppStack.Screen name="AdminDashboard" component={AdminDashboardScreen} />
     </AppStack.Navigator>
   );
 }

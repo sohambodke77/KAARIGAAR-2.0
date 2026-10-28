@@ -20,9 +20,9 @@ import { useMarketplace, type Order } from '../context/MarketplaceContext';
 import type { AppStackParamList } from '../navigation/types';
 import { colors, fonts, radius, shadow } from '../theme';
 
-type OrderTab = 'All' | 'Processing' | 'Ready to Ship' | 'Shipped' | 'Delivered';
+type OrderTab = 'All' | 'Processing' | 'In Studio' | 'Ready to Ship' | 'Shipped' | 'Delivered' | 'Cancelled';
 
-const TABS: OrderTab[] = ['All', 'Processing', 'Ready to Ship', 'Shipped', 'Delivered'];
+const TABS: OrderTab[] = ['All', 'Processing', 'In Studio', 'Ready to Ship', 'Shipped', 'Delivered', 'Cancelled'];
 
 export function OrdersScreen() {
   const navigation = useNavigation<NativeStackNavigationProp<AppStackParamList>>();
@@ -31,7 +31,12 @@ export function OrdersScreen() {
   const [activeTab, setActiveTab] = useState<OrderTab>('All');
 
   const filteredOrders =
-    activeTab === 'All' ? orders : orders.filter((o) => o.status === activeTab);
+    activeTab === 'All'
+      ? orders
+      : orders.filter((o) => {
+          if (activeTab === 'Cancelled') return o.status === 'Cancelled' || o.status === 'Refunded';
+          return o.status === activeTab;
+        });
 
   const getStatusColor = (status: Order['status']) => {
     switch (status) {
@@ -39,8 +44,12 @@ export function OrdersScreen() {
         return colors.ecoGreen;
       case 'Shipped':
         return '#2E5B82';
+      case 'In Studio':
       case 'Ready to Ship':
         return colors.goldDeep;
+      case 'Cancelled':
+      case 'Refunded':
+        return colors.danger;
       default:
         return colors.terracotta;
     }
@@ -108,18 +117,48 @@ export function OrdersScreen() {
                     {/* Header */}
                     <View style={styles.orderCardHeader}>
                       <View>
-                        <Text style={styles.orderIdText}>Order #{order.id}</Text>
+                        <Text style={styles.orderIdText}>Order #{order.orderNumber || order.id}</Text>
                         <Text style={styles.orderDateText}>Placed on {order.date}</Text>
                       </View>
 
-                      <View
-                        style={[
-                          styles.statusBadge,
-                          { backgroundColor: `${statusColor}18`, borderColor: `${statusColor}44` },
-                        ]}
-                      >
-                        <View style={[styles.statusDot, { backgroundColor: statusColor }]} />
-                        <Text style={[styles.statusText, { color: statusColor }]}>{order.status}</Text>
+                      <View style={{ alignItems: 'flex-end', gap: 4 }}>
+                        <View
+                          style={[
+                            styles.statusBadge,
+                            { backgroundColor: `${statusColor}18`, borderColor: `${statusColor}44` },
+                          ]}
+                        >
+                          <View style={[styles.statusDot, { backgroundColor: statusColor }]} />
+                          <Text style={[styles.statusText, { color: statusColor }]}>{order.status}</Text>
+                        </View>
+
+                        {order.paymentStatus && (
+                          <View
+                            style={[
+                              styles.payStatusBadge,
+                              order.paymentStatus === 'Paid'
+                                ? { backgroundColor: colors.ecoGreenFaint }
+                                : order.paymentStatus === 'Refunded'
+                                ? { backgroundColor: '#FDEDED' }
+                                : { backgroundColor: colors.goldFaint },
+                            ]}
+                          >
+                            <Text
+                              style={[
+                                styles.payStatusText,
+                                order.paymentStatus === 'Paid'
+                                  ? { color: colors.ecoGreen }
+                                  : order.paymentStatus === 'Refunded'
+                                  ? { color: colors.danger }
+                                  : { color: colors.goldDeep },
+                              ]}
+                            >
+                              {order.paymentStatus === 'Paid'
+                                ? `PAID (${order.paymentMethod?.split(' ')[0] || 'ONLINE'})`
+                                : order.paymentStatus}
+                            </Text>
+                          </View>
+                        )}
                       </View>
                     </View>
 
@@ -156,14 +195,16 @@ export function OrdersScreen() {
                         <Text style={styles.totalPriceVal}>₹{order.totalAmount}</Text>
                       </View>
 
-                      <Pressable
-                        onPress={() => navigation.navigate('OrderDetail', { orderId: order.id })}
-                        style={styles.trackBtn}
-                        accessibilityRole="button"
-                      >
-                        <Text style={styles.trackBtnText}>Track Order</Text>
-                        <Ionicons name="arrow-forward" size={14} color={colors.charcoal} />
-                      </Pressable>
+                      <View style={{ flexDirection: 'row', gap: 8 }}>
+                        <Pressable
+                          onPress={() => navigation.navigate('OrderDetail', { orderId: order.id })}
+                          style={styles.trackBtn}
+                          accessibilityRole="button"
+                        >
+                          <Text style={styles.trackBtnText}>Track Order & Invoice</Text>
+                          <Ionicons name="arrow-forward" size={14} color={colors.charcoal} />
+                        </Pressable>
+                      </View>
                     </View>
                   </View>
                 );
@@ -391,5 +432,15 @@ const styles = StyleSheet.create({
     fontFamily: fonts.sans.semibold,
     fontSize: 13.5,
     color: '#FFFFFF',
+  },
+  payStatusBadge: {
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 4,
+  },
+  payStatusText: {
+    fontFamily: fonts.sans.bold,
+    fontSize: 10,
+    textTransform: 'uppercase',
   },
 });

@@ -16,6 +16,7 @@ import { useNavigation } from '@react-navigation/native';
 import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 import { BackButton } from '../components/BackButton';
+import { useAuth } from '../context/AuthContext';
 import { useMarketplace } from '../context/MarketplaceContext';
 import type { AppStackParamList } from '../navigation/types';
 import { colors, fonts, radius, shadow } from '../theme';
@@ -33,6 +34,7 @@ export function AddProductScreen() {
   const { width } = useWindowDimensions();
   const isDesktop = width >= 768;
 
+  const { canAccessSellerFeatures } = useAuth();
   const { categories, addNewProduct } = useMarketplace();
 
   // Form Fields
@@ -101,6 +103,54 @@ export function AddProductScreen() {
       navigation.navigate('ProductDetail', { productId: newProd.id });
     }, 700);
   };
+
+  if (!canAccessSellerFeatures) {
+    return (
+      <SafeAreaView style={styles.safe} edges={['top']}>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', padding: 24 }}>
+          <Ionicons name="lock-closed-outline" size={44} color={colors.gold} />
+          <Text
+            style={{
+              fontFamily: fonts.serif.bold,
+              fontSize: 22,
+              color: colors.charcoal,
+              marginTop: 16,
+              marginBottom: 8,
+              textAlign: 'center',
+            }}
+          >
+            Artisan Studio Access Required
+          </Text>
+          <Text
+            style={{
+              fontFamily: fonts.sans.regular,
+              fontSize: 14,
+              color: colors.textSecondary,
+              textAlign: 'center',
+              lineHeight: 20,
+              maxWidth: 420,
+              marginBottom: 24,
+            }}
+          >
+            Only registered and verified KARIGAAR creators can list handmade products. Switch to an Artisan account or complete your studio onboarding to proceed.
+          </Text>
+          <Pressable
+            onPress={() => navigation.navigate('CustomerHome')}
+            style={{
+              backgroundColor: colors.charcoal,
+              paddingVertical: 12,
+              paddingHorizontal: 24,
+              borderRadius: radius.md,
+            }}
+          >
+            <Text style={{ color: '#FFFFFF', fontFamily: fonts.sans.semibold, fontSize: 14 }}>
+              Return to Marketplace
+            </Text>
+          </Pressable>
+        </View>
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView style={styles.safe} edges={['top']}>

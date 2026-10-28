@@ -17,6 +17,7 @@ import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { BackButton } from '../components/BackButton';
 import { BottomNavigation } from '../components/BottomNavigation';
 import { MarketplaceHeader } from '../components/MarketplaceHeader';
+import { ArtisanOnboardingModal } from '../components/ArtisanOnboardingModal';
 import { useAuth, type Role } from '../context/AuthContext';
 import { useMarketplace } from '../context/MarketplaceContext';
 import type { AppStackParamList } from '../navigation/types';
@@ -40,7 +41,7 @@ export function ProfileScreen() {
   const { width } = useWindowDimensions();
   const isDesktop = width >= 768;
 
-  const { user, activeRole, switchRole, updateProfile, signOut } = useAuth();
+  const { user, activeRole, switchRole, updateProfile, signOut, canAccessSellerFeatures } = useAuth();
   const { wishlist, orders } = useMarketplace();
 
   // Form State initialized from user profile
@@ -51,6 +52,7 @@ export function ProfileScreen() {
   const [locality, setLocality] = useState(user?.profile?.locality || 'Kothrud');
   const [showLocalityDropdown, setShowLocalityDropdown] = useState(false);
   const [saveToast, setSaveToast] = useState(false);
+  const [showOnboardModal, setShowOnboardModal] = useState(false);
 
   const handleSaveProfile = async () => {
     await updateProfile({
@@ -65,6 +67,10 @@ export function ProfileScreen() {
   };
 
   const handleRoleToggle = async (role: Role) => {
+    if (role === 'seller' && !canAccessSellerFeatures) {
+      setShowOnboardModal(true);
+      return;
+    }
     await switchRole(role);
     if (role === 'seller') {
       navigation.navigate('SellerDashboard');
@@ -345,6 +351,15 @@ export function ProfileScreen() {
       </ScrollView>
 
       <BottomNavigation activeTab="profile" />
+
+      <ArtisanOnboardingModal
+        visible={showOnboardModal}
+        onClose={() => setShowOnboardModal(false)}
+        onSuccess={() => {
+          setShowOnboardModal(false);
+          navigation.navigate('SellerDashboard');
+        }}
+      />
     </SafeAreaView>
   );
 }

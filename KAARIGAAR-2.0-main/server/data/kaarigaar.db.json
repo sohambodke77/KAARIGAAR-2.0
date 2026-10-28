@@ -1,0 +1,3181 @@
+{
+  "products": [
+    {
+      "id": "prod_crochet_sunflower",
+      "name": "Everlasting Hand-Hooked Sunflower Pot",
+      "price": 1299,
+      "stock": 25,
+      "categoryId": "crochet",
+      "creatorId": "creator_1",
+      "creatorName": "Ananya Mukherjee"
+    },
+    {
+      "id": "prod_crochet_tulip",
+      "name": "Handmade Crochet Tulip Bouquet",
+      "price": 850,
+      "stock": 30,
+      "categoryId": "crochet",
+      "creatorId": "creator_1",
+      "creatorName": "Ananya Mukherjee"
+    },
+    {
+      "id": "prod_resin_nameplate",
+      "name": "Teak & Emerald Resin Nameplate",
+      "price": 2150,
+      "stock": 12,
+      "categoryId": "resin",
+      "creatorId": "creator_me",
+      "creatorName": "Sanket Joshi"
+    },
+    {
+      "id": "prod_brass_diya",
+      "name": "Hand-cast Floral Brass Diya",
+      "price": 650,
+      "stock": 40,
+      "categoryId": "homedecor",
+      "creatorId": "creator_2",
+      "creatorName": "Sunita Devi"
+    },
+    {
+      "id": "prod_ceramic_mug",
+      "name": "Studio Pottery Stoneware Mug",
+      "price": 580,
+      "stock": 15,
+      "categoryId": "pottery",
+      "creatorId": "creator_me",
+      "creatorName": "Sanket Joshi"
+    },
+    {
+      "id": "prod_mithila_painting",
+      "name": "Mithila Tree of Life Heritage Painting",
+      "price": 3200,
+      "stock": 5,
+      "categoryId": "paintings",
+      "creatorId": "creator_2",
+      "creatorName": "Sunita Devi"
+    },
+    {
+      "id": "prod_out_of_stock_sample",
+      "name": "Rare Vintage Handwoven Brocade Stole",
+      "price": 3800,
+      "stock": 0,
+      "categoryId": "homedecor",
+      "creatorId": "creator_1",
+      "creatorName": "Ananya Mukherjee"
+    }
+  ],
+  "orders": [
+    {
+      "id": "kg_ord_1792211699174",
+      "orderNumber": "KG-92019",
+      "customerId": "usr_guest",
+      "customerName": "Sanket Joshi",
+      "customerEmail": "customer@kaarigaar.com",
+      "customerPhone": "+91 98220 45678",
+      "deliveryAddress": {
+        "name": "Sanket Joshi",
+        "phone": "+91 98220 45678",
+        "address": "Workshop Unit 12, Senapati Bapat Road",
+        "locality": "Shivaji Nagar",
+        "city": "Pune",
+        "pincode": "411016"
+      },
+      "deliveryType": "standard",
+      "subtotal": 798,
+      "deliveryFee": 0,
+      "discount": 0,
+      "couponCode": null,
+      "taxGst": 39.9,
+      "totalAmount": 798,
+      "currency": "INR",
+      "status": "Pending Payment",
+      "paymentStatus": "Pending",
+      "paymentMethod": "UPI (GPAY)",
+      "gatewayOrderId": null,
+      "gatewayPaymentId": null,
+      "trackingNumber": "DEL-PUN-933244",
+      "courierPartner": "Pune Artisan Express Delivery",
+      "estimatedDelivery": "3 to 5 business days",
+      "createdAt": "2026-10-17T04:34:59.174Z",
+      "updatedAt": "2026-10-17T04:34:59.174Z"
+    },
+    {
+      "id": "kg_ord_1792064515044",
+      "orderNumber": "KG-67335",
+      "customerId": "usr_guest",
+      "customerName": "Sanket Joshi",
+      "customerEmail": "customer@kaarigaar.com",
+      "customerPhone": "+91 98220 45678",
+      "deliveryAddress": {
+        "name": "Sanket Joshi",
+        "phone": "+91 98220 45678",
+        "address": "Flat 402, Mayur Heights, Paud Road",
+        "locality": "Kothrud",
+        "city": "Pune",
+        "pincode": "411038"
+      },
+      "deliveryType": "standard",
+      "subtotal": 299,
+      "deliveryFee": 49,
+      "discount": 0,
+      "couponCode": null,
+      "taxGst": 14.95,
+      "totalAmount": 348,
+      "currency": "INR",
+      "status": "Pending Payment",
+      "paymentStatus": "Pending",
+      "paymentMethod": "UPI (GPAY)",
+      "gatewayOrderId": null,
+      "gatewayPaymentId": null,
+      "trackingNumber": "DEL-PUN-941139",
+      "courierPartner": "Pune Artisan Express Delivery",
+      "estimatedDelivery": "3 to 5 business days",
+      "createdAt": "2026-10-15T11:41:55.044Z",
+      "updatedAt": "2026-10-15T11:41:55.044Z"
+    },
+    {
+      "id": "ord_strict_deliv_1792064142715",
+      "orderNumber": "KG-DELIV-REQ",
+      "totalAmount": 1200,
+      "status": "Delivered",
+      "paymentStatus": "Paid",
+      "createdAt": "2026-10-15T11:35:42.716Z",
+      "updatedAt": "2026-10-15T11:35:42.721Z"
+    },
+    {
+      "id": "test_multi_seller_1792064142694",
+      "orderNumber": "KG-MULTI-SELL",
+      "subtotal": 3500,
+      "deliveryFee": 0,
+      "discount": 0,
+      "totalAmount": 3500,
+      "status": "Processing",
+      "paymentStatus": "Paid",
+      "createdAt": "2026-10-15T11:35:42.694Z",
+      "updatedAt": "2026-10-15T11:35:42.694Z"
+    },
+    {
+      "id": "test_ord_refund_flow_1792064142679",
+      "orderNumber": "KG-REF-FLOW",
+      "totalAmount": 1500,
+      "currency": "INR",
+      "status": "Cancelled",
+      "paymentStatus": "Refunded",
+      "paymentMethod": "UPI",
+      "gatewayPaymentId": "pay_refund_flow_123",
+      "createdAt": "2026-10-15T11:35:42.679Z",
+      "updatedAt": "2026-10-15T11:35:42.683Z"
+    },
+    {
+      "id": "test_ord_retry_1792064142485",
+      "orderNumber": "KG-RETRY-1",
+      "totalAmount": 1800,
+      "status": "Pending Payment",
+      "paymentStatus": "Pending",
+      "createdAt": "2026-10-15T11:35:42.485Z",
+      "updatedAt": "2026-10-15T11:35:42.485Z"
+    },
+    {
+      "id": "test_ord_dup_hook_1792064142469",
+      "orderNumber": "KG-DUP-HOOK",
+      "totalAmount": 950,
+      "status": "Processing",
+      "paymentStatus": "Paid",
+      "createdAt": "2026-10-15T11:35:42.469Z",
+      "updatedAt": "2026-10-15T11:35:42.478Z",
+      "gatewayOrderId": "order_dup_hook_1792064142469",
+      "gatewayPaymentId": "pay_dup_hook_1792064142469",
+      "paymentMethod": "upi"
+    },
+    {
+      "id": "test_ord_delayed_hook_1792064142457",
+      "orderNumber": "KG-DELAYED-WH",
+      "totalAmount": 1400,
+      "status": "Processing",
+      "paymentStatus": "Paid",
+      "createdAt": "2026-10-15T11:35:42.457Z",
+      "updatedAt": "2026-10-15T11:35:42.463Z",
+      "gatewayOrderId": "order_dh_1792064142457",
+      "gatewayPaymentId": "pay_dh_1792064142457",
+      "paymentMethod": "Card"
+    },
+    {
+      "id": "test_ord_cancel_1792064142453",
+      "orderNumber": "KG-ABANDON-1",
+      "totalAmount": 1500,
+      "status": "Pending Payment",
+      "paymentStatus": "Pending",
+      "createdAt": "2026-10-15T11:35:42.453Z",
+      "updatedAt": "2026-10-15T11:35:42.454Z"
+    },
+    {
+      "id": "test_ord_fail_1792064142446",
+      "orderNumber": "KG-FAIL-1",
+      "totalAmount": 850,
+      "currency": "INR",
+      "status": "Pending Payment",
+      "paymentStatus": "Pending",
+      "createdAt": "2026-10-15T11:35:42.446Z",
+      "updatedAt": "2026-10-15T11:35:42.446Z"
+    },
+    {
+      "id": "test_ord_success_1792064142431",
+      "orderNumber": "KG-SUCC-1",
+      "totalAmount": 1200,
+      "currency": "INR",
+      "status": "Processing",
+      "paymentStatus": "Paid",
+      "createdAt": "2026-10-15T11:35:42.432Z",
+      "updatedAt": "2026-10-15T11:35:42.439Z",
+      "gatewayOrderId": "order_test_1792064142431",
+      "gatewayPaymentId": "pay_test_1792064142431",
+      "paymentMethod": "UPI"
+    },
+    {
+      "id": "ord_strict_deliv_1792064081704",
+      "orderNumber": "KG-DELIV-REQ",
+      "totalAmount": 1200,
+      "status": "Delivered",
+      "paymentStatus": "Paid",
+      "createdAt": "2026-10-15T11:34:41.706Z",
+      "updatedAt": "2026-10-15T11:34:41.714Z"
+    },
+    {
+      "id": "test_multi_seller_1792064081690",
+      "orderNumber": "KG-MULTI-SELL",
+      "subtotal": 3500,
+      "deliveryFee": 0,
+      "discount": 0,
+      "totalAmount": 3500,
+      "status": "Processing",
+      "paymentStatus": "Paid",
+      "createdAt": "2026-10-15T11:34:41.690Z",
+      "updatedAt": "2026-10-15T11:34:41.690Z"
+    },
+    {
+      "id": "test_ord_refund_flow_1792064081674",
+      "orderNumber": "KG-REF-FLOW",
+      "totalAmount": 1500,
+      "currency": "INR",
+      "status": "Cancelled",
+      "paymentStatus": "Refunded",
+      "paymentMethod": "UPI",
+      "gatewayPaymentId": "pay_refund_flow_123",
+      "createdAt": "2026-10-15T11:34:41.674Z",
+      "updatedAt": "2026-10-15T11:34:41.682Z"
+    },
+    {
+      "id": "test_ord_retry_1792064081103",
+      "orderNumber": "KG-RETRY-1",
+      "totalAmount": 1800,
+      "status": "Pending Payment",
+      "paymentStatus": "Pending",
+      "createdAt": "2026-10-15T11:34:41.103Z",
+      "updatedAt": "2026-10-15T11:34:41.103Z"
+    },
+    {
+      "id": "test_ord_dup_hook_1792064081090",
+      "orderNumber": "KG-DUP-HOOK",
+      "totalAmount": 950,
+      "status": "Processing",
+      "paymentStatus": "Paid",
+      "createdAt": "2026-10-15T11:34:41.090Z",
+      "updatedAt": "2026-10-15T11:34:41.097Z",
+      "gatewayOrderId": "order_dup_hook_1792064081090",
+      "gatewayPaymentId": "pay_dup_hook_1792064081090",
+      "paymentMethod": "upi"
+    },
+    {
+      "id": "test_ord_delayed_hook_1792064081077",
+      "orderNumber": "KG-DELAYED-WH",
+      "totalAmount": 1400,
+      "status": "Processing",
+      "paymentStatus": "Paid",
+      "createdAt": "2026-10-15T11:34:41.077Z",
+      "updatedAt": "2026-10-15T11:34:41.083Z",
+      "gatewayOrderId": "order_dh_1792064081077",
+      "gatewayPaymentId": "pay_dh_1792064081077",
+      "paymentMethod": "Card"
+    },
+    {
+      "id": "test_ord_cancel_1792064081072",
+      "orderNumber": "KG-ABANDON-1",
+      "totalAmount": 1500,
+      "status": "Pending Payment",
+      "paymentStatus": "Pending",
+      "createdAt": "2026-10-15T11:34:41.072Z",
+      "updatedAt": "2026-10-15T11:34:41.072Z"
+    },
+    {
+      "id": "test_ord_fail_1792064081065",
+      "orderNumber": "KG-FAIL-1",
+      "totalAmount": 850,
+      "currency": "INR",
+      "status": "Pending Payment",
+      "paymentStatus": "Pending",
+      "createdAt": "2026-10-15T11:34:41.065Z",
+      "updatedAt": "2026-10-15T11:34:41.065Z"
+    },
+    {
+      "id": "test_ord_success_1792064081052",
+      "orderNumber": "KG-SUCC-1",
+      "totalAmount": 1200,
+      "currency": "INR",
+      "status": "Processing",
+      "paymentStatus": "Paid",
+      "createdAt": "2026-10-15T11:34:41.052Z",
+      "updatedAt": "2026-10-15T11:34:41.060Z",
+      "gatewayOrderId": "order_test_1792064081052",
+      "gatewayPaymentId": "pay_test_1792064081052",
+      "paymentMethod": "UPI"
+    },
+    {
+      "id": "kg_ord_1792061821839",
+      "orderNumber": "KG-94891",
+      "customerId": "usr_guest",
+      "customerName": "Sanket Joshi",
+      "customerEmail": "customer@kaarigaar.com",
+      "customerPhone": "+91 98220 45678",
+      "deliveryAddress": {
+        "name": "Sanket Joshi",
+        "phone": "+91 98220 45678",
+        "address": "Workshop Unit 12, Senapati Bapat Road",
+        "locality": "Shivaji Nagar",
+        "city": "Pune",
+        "pincode": "411016"
+      },
+      "deliveryType": "standard",
+      "subtotal": 899,
+      "deliveryFee": 0,
+      "discount": 0,
+      "couponCode": null,
+      "taxGst": 44.95,
+      "totalAmount": 899,
+      "currency": "INR",
+      "status": "Processing",
+      "paymentStatus": "Paid",
+      "paymentMethod": "UPI (BHIM)",
+      "gatewayOrderId": "order_1792061821858_1491",
+      "gatewayPaymentId": "pay_rzp_1792061821929_1914",
+      "trackingNumber": "DEL-PUN-802225",
+      "courierPartner": "Pune Artisan Express Delivery",
+      "estimatedDelivery": "3 to 5 business days",
+      "createdAt": "2026-10-15T10:57:01.839Z",
+      "updatedAt": "2026-10-15T10:57:01.946Z"
+    },
+    {
+      "id": "kg_ord_1792049367152",
+      "orderNumber": "KG-20204",
+      "customerId": "usr_guest",
+      "customerName": "Sanket Joshi",
+      "customerEmail": "customer@kaarigaar.com",
+      "customerPhone": "+91 98220 45678",
+      "deliveryAddress": {
+        "name": "Sanket Joshi",
+        "phone": "+91 98220 45678",
+        "address": "Flat 402, Mayur Heights, Paud Road",
+        "locality": "Kothrud",
+        "city": "Pune",
+        "pincode": "411038"
+      },
+      "deliveryType": "standard",
+      "subtotal": 1347,
+      "deliveryFee": 0,
+      "discount": 0,
+      "couponCode": null,
+      "taxGst": 67.35,
+      "totalAmount": 1347,
+      "currency": "INR",
+      "status": "Processing",
+      "paymentStatus": "Paid",
+      "paymentMethod": "UPI (GPAY)",
+      "gatewayOrderId": "order_1792049367174_5254",
+      "gatewayPaymentId": "pay_rzp_1792049367244_5464",
+      "trackingNumber": "DEL-PUN-790524",
+      "courierPartner": "Pune Artisan Express Delivery",
+      "estimatedDelivery": "3 to 5 business days",
+      "createdAt": "2026-10-15T07:29:27.152Z",
+      "updatedAt": "2026-10-15T07:29:27.273Z"
+    },
+    {
+      "id": "kg_ord_1792038940847",
+      "orderNumber": "KG-53127",
+      "customerId": "usr_guest",
+      "customerName": "Sanket Joshi",
+      "customerEmail": "customer@kaarigaar.com",
+      "customerPhone": "9988776655",
+      "deliveryAddress": {
+        "name": "Sanket Joshi",
+        "phone": "9988776655",
+        "address": "FC Road",
+        "locality": "Shivajinagar",
+        "city": "Pune",
+        "pincode": "411005"
+      },
+      "deliveryType": "standard",
+      "subtotal": 0,
+      "deliveryFee": 49,
+      "discount": 0,
+      "couponCode": null,
+      "taxGst": 0,
+      "totalAmount": 49,
+      "currency": "INR",
+      "status": "Processing",
+      "paymentStatus": "Paid",
+      "paymentMethod": "UPI",
+      "gatewayOrderId": "order_1792038940857_1880",
+      "gatewayPaymentId": "pay_test_verified_123",
+      "trackingNumber": "DEL-PUN-879671",
+      "courierPartner": "Pune Artisan Express Delivery",
+      "estimatedDelivery": "3 to 5 business days",
+      "createdAt": "2026-10-15T04:35:40.847Z",
+      "updatedAt": "2026-10-15T04:35:40.869Z"
+    },
+    {
+      "id": "kg_ord_1792038839667",
+      "orderNumber": "KG-64196",
+      "customerId": "usr_guest",
+      "customerName": "Priya Kulkarni",
+      "customerEmail": "customer@kaarigaar.com",
+      "customerPhone": "9876543210",
+      "deliveryAddress": {
+        "name": "Priya Kulkarni",
+        "phone": "9876543210",
+        "address": "Flat 402, Lotus Residency",
+        "locality": "Viman Nagar",
+        "city": "Pune",
+        "pincode": "411014"
+      },
+      "deliveryType": "standard",
+      "subtotal": 0,
+      "deliveryFee": 49,
+      "discount": 0,
+      "couponCode": null,
+      "taxGst": 0,
+      "totalAmount": 49,
+      "currency": "INR",
+      "status": "Pending Payment",
+      "paymentStatus": "Pending",
+      "paymentMethod": "upi",
+      "gatewayOrderId": null,
+      "gatewayPaymentId": null,
+      "trackingNumber": "DEL-PUN-658264",
+      "courierPartner": "Pune Artisan Express Delivery",
+      "estimatedDelivery": "3 to 5 business days",
+      "createdAt": "2026-10-15T04:33:59.667Z",
+      "updatedAt": "2026-10-15T04:33:59.668Z"
+    },
+    {
+      "id": "ord_refund_1792037925643",
+      "orderNumber": "KG-REF-TEST",
+      "totalAmount": 999,
+      "status": "Cancelled",
+      "paymentStatus": "Refunded",
+      "paymentMethod": "UPI",
+      "gatewayPaymentId": "pay_test_refund_123",
+      "currency": "INR",
+      "createdAt": "2026-10-15T04:18:45.643Z",
+      "updatedAt": "2026-10-15T04:18:45.648Z"
+    },
+    {
+      "id": "ord_unfulfilled_1792037925633",
+      "orderNumber": "KG-UNFUL",
+      "totalAmount": 1000,
+      "status": "Delivered",
+      "paymentStatus": "Paid",
+      "createdAt": "2026-10-15T04:18:45.633Z",
+      "updatedAt": "2026-10-15T04:18:45.637Z"
+    },
+    {
+      "id": "test_ord_comm_1792037925628",
+      "orderNumber": "KG-COMM-1792037925628",
+      "subtotal": 2000,
+      "deliveryFee": 0,
+      "discount": 200,
+      "totalAmount": 1800,
+      "status": "Processing",
+      "paymentStatus": "Paid",
+      "createdAt": "2026-10-15T04:18:45.628Z",
+      "updatedAt": "2026-10-15T04:18:45.628Z"
+    },
+    {
+      "id": "test_ord_sig_1792037925615",
+      "orderNumber": "KG-TEST-SIG",
+      "subtotal": 1000,
+      "deliveryFee": 0,
+      "discount": 0,
+      "totalAmount": 1000,
+      "currency": "INR",
+      "status": "Processing",
+      "paymentStatus": "Paid",
+      "createdAt": "2026-10-15T04:18:45.615Z",
+      "updatedAt": "2026-10-15T04:18:45.623Z",
+      "gatewayOrderId": "order_test_1792037925615",
+      "gatewayPaymentId": "pay_test_1792037925615",
+      "paymentMethod": "UPI"
+    },
+    {
+      "id": "ord_refund_1792036721772",
+      "orderNumber": "KG-REF-TEST",
+      "totalAmount": 999,
+      "status": "Cancelled",
+      "paymentStatus": "Refunded",
+      "paymentMethod": "UPI",
+      "gatewayPaymentId": "pay_test_refund_123",
+      "currency": "INR",
+      "createdAt": "2026-10-15T03:58:41.772Z",
+      "updatedAt": "2026-10-15T03:58:41.776Z"
+    },
+    {
+      "id": "ord_unfulfilled_1792036721764",
+      "orderNumber": "KG-UNFUL",
+      "totalAmount": 1000,
+      "status": "Delivered",
+      "paymentStatus": "Paid",
+      "createdAt": "2026-10-15T03:58:41.764Z",
+      "updatedAt": "2026-10-15T03:58:41.767Z"
+    },
+    {
+      "id": "test_ord_comm_1792036721759",
+      "orderNumber": "KG-COMM-1792036721759",
+      "subtotal": 2000,
+      "deliveryFee": 0,
+      "discount": 200,
+      "totalAmount": 1800,
+      "status": "Processing",
+      "paymentStatus": "Paid",
+      "createdAt": "2026-10-15T03:58:41.759Z",
+      "updatedAt": "2026-10-15T03:58:41.759Z"
+    },
+    {
+      "id": "test_ord_sig_1792036721750",
+      "orderNumber": "KG-TEST-SIG",
+      "subtotal": 1000,
+      "deliveryFee": 0,
+      "discount": 0,
+      "totalAmount": 1000,
+      "currency": "INR",
+      "status": "Processing",
+      "paymentStatus": "Paid",
+      "createdAt": "2026-10-15T03:58:41.750Z",
+      "updatedAt": "2026-10-15T03:58:41.756Z",
+      "gatewayOrderId": "order_test_1792036721750",
+      "gatewayPaymentId": "pay_test_1792036721750",
+      "paymentMethod": "UPI"
+    },
+    {
+      "id": "kg_ord_1001",
+      "orderNumber": "KG-94821",
+      "customerId": "usr_cust_1",
+      "customerName": "Pooja Deshmukh",
+      "customerEmail": "pooja.deshmukh@gmail.com",
+      "customerPhone": "+91 98221 44556",
+      "deliveryAddress": {
+        "name": "Pooja Deshmukh",
+        "phone": "+91 98221 44556",
+        "address": "B-601, Rohan Ashima, Near MIT College",
+        "locality": "Kothrud",
+        "city": "Pune",
+        "pincode": "411038"
+      },
+      "subtotal": 1299,
+      "deliveryFee": 0,
+      "discount": 100,
+      "taxGst": 65,
+      "totalAmount": 1199,
+      "currency": "INR",
+      "status": "Delivered",
+      "paymentStatus": "Paid",
+      "paymentMethod": "UPI",
+      "gatewayOrderId": "order_KG94821_RZP",
+      "gatewayPaymentId": "pay_KG94821_RZP_01",
+      "trackingNumber": "DEL-PUN-982144",
+      "courierPartner": "Pune Artisan Express Delivery",
+      "estimatedDelivery": "Delivered on Oct 10",
+      "createdAt": "2026-10-08T03:58:41.739Z",
+      "updatedAt": "2026-10-08T03:58:41.739Z"
+    },
+    {
+      "id": "kg_ord_1002",
+      "orderNumber": "KG-94855",
+      "customerId": "usr_cust_2",
+      "customerName": "Aditya Kulkarni",
+      "customerEmail": "aditya.k@outlook.com",
+      "customerPhone": "+91 97654 32109",
+      "deliveryAddress": {
+        "name": "Aditya Kulkarni",
+        "phone": "+91 97654 32109",
+        "address": "4th Floor, Platinum Square, Viman Nagar",
+        "locality": "Viman Nagar",
+        "city": "Pune",
+        "pincode": "411014"
+      },
+      "subtotal": 1850,
+      "deliveryFee": 0,
+      "discount": 0,
+      "taxGst": 92.5,
+      "totalAmount": 1850,
+      "currency": "INR",
+      "status": "In Studio",
+      "paymentStatus": "Paid",
+      "paymentMethod": "Card",
+      "gatewayOrderId": "order_KG94855_RZP",
+      "gatewayPaymentId": "pay_KG94855_RZP_02",
+      "trackingNumber": "DEL-PUN-982155",
+      "courierPartner": "Pune Artisan Express Delivery",
+      "estimatedDelivery": "3 to 5 business days",
+      "createdAt": "2026-10-12T03:58:41.739Z",
+      "updatedAt": "2026-10-15T03:58:41.739Z"
+    }
+  ],
+  "order_items": [
+    {
+      "id": "item_1792211699179_377",
+      "orderId": "kg_ord_1792211699174",
+      "productId": "prod_1",
+      "productName": "Handmade Crochet Sunflower Pot",
+      "categoryId": "crochet",
+      "creatorId": "creator_1",
+      "creatorName": "Ananya Mukherjee",
+      "quantity": 1,
+      "unitPrice": 299,
+      "customization": null,
+      "totalPrice": 299,
+      "createdAt": "2026-10-17T04:34:59.179Z",
+      "updatedAt": "2026-10-17T04:34:59.179Z"
+    },
+    {
+      "id": "item_1792211699176_921",
+      "orderId": "kg_ord_1792211699174",
+      "productId": "prod_3",
+      "productName": "Resin Flower Art Trinket Tray",
+      "categoryId": "resin",
+      "creatorId": "creator_6",
+      "creatorName": "Meera Sen",
+      "quantity": 1,
+      "unitPrice": 499,
+      "customization": null,
+      "totalPrice": 499,
+      "createdAt": "2026-10-17T04:34:59.177Z",
+      "updatedAt": "2026-10-17T04:34:59.177Z"
+    },
+    {
+      "id": "item_1792064515047_718",
+      "orderId": "kg_ord_1792064515044",
+      "productId": "prod_1",
+      "productName": "Handmade Crochet Sunflower Pot",
+      "categoryId": "crochet",
+      "creatorId": "creator_1",
+      "creatorName": "Ananya Mukherjee",
+      "quantity": 1,
+      "unitPrice": 299,
+      "customization": null,
+      "totalPrice": 299,
+      "createdAt": "2026-10-15T11:41:55.047Z",
+      "updatedAt": "2026-10-15T11:41:55.047Z"
+    },
+    {
+      "id": "item_m2_1792064142708",
+      "orderId": "test_multi_seller_1792064142694",
+      "productId": "prod_resin_1",
+      "categoryId": "resin",
+      "creatorId": "creator_me",
+      "creatorName": "Sanket Joshi",
+      "quantity": 1,
+      "unitPrice": 2000,
+      "totalPrice": 2000,
+      "createdAt": "2026-10-15T11:35:42.708Z",
+      "updatedAt": "2026-10-15T11:35:42.709Z"
+    },
+    {
+      "id": "item_m1_1792064142707",
+      "orderId": "test_multi_seller_1792064142694",
+      "productId": "prod_crochet_1",
+      "categoryId": "crochet",
+      "creatorId": "creator_1",
+      "creatorName": "Ananya Mukherjee",
+      "quantity": 1,
+      "unitPrice": 1500,
+      "totalPrice": 1500,
+      "createdAt": "2026-10-15T11:35:42.707Z",
+      "updatedAt": "2026-10-15T11:35:42.707Z"
+    },
+    {
+      "id": "item_m2_1792064081695",
+      "orderId": "test_multi_seller_1792064081690",
+      "productId": "prod_resin_1",
+      "categoryId": "resin",
+      "creatorId": "creator_me",
+      "creatorName": "Sanket Joshi",
+      "quantity": 1,
+      "unitPrice": 2000,
+      "totalPrice": 2000,
+      "createdAt": "2026-10-15T11:34:41.695Z",
+      "updatedAt": "2026-10-15T11:34:41.695Z"
+    },
+    {
+      "id": "item_m1_1792064081693",
+      "orderId": "test_multi_seller_1792064081690",
+      "productId": "prod_crochet_1",
+      "categoryId": "crochet",
+      "creatorId": "creator_1",
+      "creatorName": "Ananya Mukherjee",
+      "quantity": 1,
+      "unitPrice": 1500,
+      "totalPrice": 1500,
+      "createdAt": "2026-10-15T11:34:41.693Z",
+      "updatedAt": "2026-10-15T11:34:41.693Z"
+    },
+    {
+      "id": "item_1792061821846_678",
+      "orderId": "kg_ord_1792061821839",
+      "productId": "prod_2",
+      "productName": "Hand-painted Madhubani Painting",
+      "categoryId": "paintings",
+      "creatorId": "creator_2",
+      "creatorName": "Sunita Devi",
+      "quantity": 1,
+      "unitPrice": 899,
+      "customization": null,
+      "totalPrice": 899,
+      "createdAt": "2026-10-15T10:57:01.846Z",
+      "updatedAt": "2026-10-15T10:57:01.846Z"
+    },
+    {
+      "id": "item_1792049367161_619",
+      "orderId": "kg_ord_1792049367152",
+      "productId": "prod_1",
+      "productName": "Handmade Crochet Sunflower Pot",
+      "categoryId": "crochet",
+      "creatorId": "creator_1",
+      "creatorName": "Ananya Mukherjee",
+      "quantity": 1,
+      "unitPrice": 299,
+      "customization": null,
+      "totalPrice": 299,
+      "createdAt": "2026-10-15T07:29:27.161Z",
+      "updatedAt": "2026-10-15T07:29:27.161Z"
+    },
+    {
+      "id": "item_1792049367159_214",
+      "orderId": "kg_ord_1792049367152",
+      "productId": "prod_5",
+      "productName": "Terracotta Glazed Kulhad & Kettle Set",
+      "categoryId": "pottery",
+      "creatorId": "creator_3",
+      "creatorName": "Rajesh Prajapati",
+      "quantity": 1,
+      "unitPrice": 549,
+      "customization": null,
+      "totalPrice": 549,
+      "createdAt": "2026-10-15T07:29:27.159Z",
+      "updatedAt": "2026-10-15T07:29:27.159Z"
+    },
+    {
+      "id": "item_1792049367155_623",
+      "orderId": "kg_ord_1792049367152",
+      "productId": "prod_3",
+      "productName": "Resin Flower Art Trinket Tray",
+      "categoryId": "resin",
+      "creatorId": "creator_6",
+      "creatorName": "Meera Sen",
+      "quantity": 1,
+      "unitPrice": 499,
+      "customization": null,
+      "totalPrice": 499,
+      "createdAt": "2026-10-15T07:29:27.155Z",
+      "updatedAt": "2026-10-15T07:29:27.155Z"
+    },
+    {
+      "id": "item_1792038940850_719",
+      "orderId": "kg_ord_1792038940847",
+      "productName": "Artisan Handmade Creation",
+      "categoryId": "homedecor",
+      "creatorId": "creator_me",
+      "creatorName": "Artisan Maker",
+      "quantity": 1,
+      "unitPrice": 0,
+      "customization": null,
+      "totalPrice": 0,
+      "createdAt": "2026-10-15T04:35:40.850Z",
+      "updatedAt": "2026-10-15T04:35:40.850Z"
+    },
+    {
+      "id": "item_1792038839670_806",
+      "orderId": "kg_ord_1792038839667",
+      "productName": "Artisan Handmade Creation",
+      "categoryId": "homedecor",
+      "creatorId": "creator_me",
+      "creatorName": "Artisan Maker",
+      "quantity": 2,
+      "unitPrice": 0,
+      "customization": null,
+      "totalPrice": 0,
+      "createdAt": "2026-10-15T04:33:59.670Z",
+      "updatedAt": "2026-10-15T04:33:59.670Z"
+    },
+    {
+      "id": "item_comm_1",
+      "orderId": "test_ord_comm_1792037925628",
+      "productId": "prod_crochet_1",
+      "productName": "Crochet Flower Pot",
+      "categoryId": "crochet",
+      "creatorId": "creator_1",
+      "creatorName": "Ananya Mukherjee",
+      "quantity": 1,
+      "unitPrice": 2000,
+      "totalPrice": 2000,
+      "createdAt": "2026-10-15T04:18:45.629Z",
+      "updatedAt": "2026-10-15T04:18:45.629Z"
+    },
+    {
+      "id": "item_comm_1",
+      "orderId": "test_ord_comm_1792036721759",
+      "productId": "prod_crochet_1",
+      "productName": "Crochet Flower Pot",
+      "categoryId": "crochet",
+      "creatorId": "creator_1",
+      "creatorName": "Ananya Mukherjee",
+      "quantity": 1,
+      "unitPrice": 2000,
+      "totalPrice": 2000,
+      "createdAt": "2026-10-15T03:58:41.760Z",
+      "updatedAt": "2026-10-15T03:58:41.760Z"
+    },
+    {
+      "id": "item_1001_1",
+      "orderId": "kg_ord_1001",
+      "productId": "prod_crochet_sunflower",
+      "productName": "Everlasting Hand-Hooked Sunflower Pot",
+      "categoryId": "crochet",
+      "creatorId": "creator_1",
+      "creatorName": "Ananya Mukherjee",
+      "quantity": 1,
+      "unitPrice": 1299,
+      "customization": {
+        "initials": "P&R",
+        "extraPrice": 0
+      },
+      "totalPrice": 1299
+    },
+    {
+      "id": "item_1002_1",
+      "orderId": "kg_ord_1002",
+      "productId": "prod_crochet_bouquet",
+      "productName": "Pastel Knitted Blossom Bouquet",
+      "categoryId": "crochet",
+      "creatorId": "creator_1",
+      "creatorName": "Ananya Mukherjee",
+      "quantity": 1,
+      "unitPrice": 1850,
+      "customization": {
+        "message": "Happy 5th Anniversary"
+      },
+      "totalPrice": 1850
+    }
+  ],
+  "payment_attempts": [
+    {
+      "id": "pay_att_1792211699408_812",
+      "orderId": "kg_ord_1792211699174",
+      "attemptNumber": 1,
+      "idempotencyKey": "idemp_chk_kg_ord_1792211699174_1792211699185",
+      "gateway": "razorpay",
+      "gatewayOrderId": "order_1792211699189_2176",
+      "gatewayPaymentId": null,
+      "amountInPaise": 79800,
+      "currency": "INR",
+      "status": "created",
+      "method": null,
+      "errorCode": null,
+      "errorDescription": null,
+      "createdAt": "2026-10-17T04:34:59.408Z",
+      "updatedAt": "2026-10-17T04:34:59.408Z"
+    },
+    {
+      "id": "pay_att_1792064515234_771",
+      "orderId": "kg_ord_1792064515044",
+      "attemptNumber": 1,
+      "idempotencyKey": "idemp_chk_kg_ord_1792064515044_1792064515057",
+      "gateway": "razorpay",
+      "gatewayOrderId": "order_1792064515063_8811",
+      "gatewayPaymentId": null,
+      "amountInPaise": 34800,
+      "currency": "INR",
+      "status": "created",
+      "method": null,
+      "errorCode": null,
+      "errorDescription": null,
+      "createdAt": "2026-10-15T11:41:55.234Z",
+      "updatedAt": "2026-10-15T11:41:55.234Z"
+    },
+    {
+      "id": "pay_att_1792064142674_429",
+      "orderId": "test_ord_idemp_key_1792064142649",
+      "attemptNumber": 1,
+      "idempotencyKey": "unique_idempotency_token_1792064142649",
+      "gateway": "razorpay",
+      "gatewayOrderId": "order_1792064142649_8604",
+      "gatewayPaymentId": null,
+      "amountInPaise": 220000,
+      "currency": "INR",
+      "status": "created",
+      "method": null,
+      "errorCode": null,
+      "errorDescription": null,
+      "createdAt": "2026-10-15T11:35:42.674Z",
+      "updatedAt": "2026-10-15T11:35:42.674Z"
+    },
+    {
+      "id": "pay_att_1792064142644_300",
+      "orderId": "test_ord_retry_1792064142485",
+      "attemptNumber": 2,
+      "idempotencyKey": "idemp_attempt2_1792064142617",
+      "gateway": "razorpay",
+      "gatewayOrderId": "order_1792064142617_3650",
+      "gatewayPaymentId": null,
+      "amountInPaise": 180000,
+      "currency": "INR",
+      "status": "created",
+      "method": null,
+      "errorCode": null,
+      "errorDescription": null,
+      "createdAt": "2026-10-15T11:35:42.644Z",
+      "updatedAt": "2026-10-15T11:35:42.644Z"
+    },
+    {
+      "id": "pay_att_1792064142610_866",
+      "orderId": "test_ord_retry_1792064142485",
+      "attemptNumber": 1,
+      "idempotencyKey": "idemp_attempt1_1792064142487",
+      "gateway": "razorpay",
+      "gatewayOrderId": "order_1792064142488_4949",
+      "gatewayPaymentId": null,
+      "amountInPaise": 180000,
+      "currency": "INR",
+      "status": "failed",
+      "method": null,
+      "errorCode": null,
+      "errorDescription": null,
+      "createdAt": "2026-10-15T11:35:42.610Z",
+      "updatedAt": "2026-10-15T11:35:42.615Z"
+    },
+    {
+      "id": "att_dup_1792064142471",
+      "orderId": "test_ord_dup_hook_1792064142469",
+      "gatewayOrderId": "order_dup_hook_1792064142469",
+      "amountInPaise": 95000,
+      "status": "captured",
+      "createdAt": "2026-10-15T11:35:42.471Z",
+      "updatedAt": "2026-10-15T11:35:42.476Z",
+      "gatewayPaymentId": "pay_dup_hook_1792064142469",
+      "method": "upi"
+    },
+    {
+      "id": "att_dh_1792064142459",
+      "orderId": "test_ord_delayed_hook_1792064142457",
+      "gatewayOrderId": "order_dh_1792064142457",
+      "amountInPaise": 140000,
+      "status": "captured",
+      "createdAt": "2026-10-15T11:35:42.459Z",
+      "updatedAt": "2026-10-15T11:35:42.461Z",
+      "gatewayPaymentId": "pay_dh_1792064142457",
+      "method": "card"
+    },
+    {
+      "id": "att_abandon_1792064142455",
+      "orderId": "test_ord_cancel_1792064142453",
+      "gatewayOrderId": "order_abandon_1792064142455",
+      "status": "created",
+      "createdAt": "2026-10-15T11:35:42.455Z",
+      "updatedAt": "2026-10-15T11:35:42.455Z"
+    },
+    {
+      "id": "att_fail_1792064142449",
+      "orderId": "test_ord_fail_1792064142446",
+      "gatewayOrderId": "order_test_fail_1792064142446",
+      "amountInPaise": 85000,
+      "currency": "INR",
+      "status": "failed",
+      "createdAt": "2026-10-15T11:35:42.449Z",
+      "updatedAt": "2026-10-15T11:35:42.450Z",
+      "errorCode": "SIGNATURE_VERIFICATION_FAILED",
+      "errorDescription": "HMAC signature did not match server calculated hash"
+    },
+    {
+      "id": "att_1792064142435",
+      "orderId": "test_ord_success_1792064142431",
+      "gatewayOrderId": "order_test_1792064142431",
+      "amountInPaise": 120000,
+      "currency": "INR",
+      "status": "captured",
+      "createdAt": "2026-10-15T11:35:42.435Z",
+      "updatedAt": "2026-10-15T11:35:42.437Z",
+      "gatewayPaymentId": "pay_test_1792064142431",
+      "method": "upi"
+    },
+    {
+      "id": "pay_att_1792064081669_201",
+      "orderId": "test_ord_idemp_key_1792064081647",
+      "attemptNumber": 1,
+      "idempotencyKey": "unique_idempotency_token_1792064081647",
+      "gateway": "razorpay",
+      "gatewayOrderId": "order_1792064081647_5561",
+      "gatewayPaymentId": null,
+      "amountInPaise": 220000,
+      "currency": "INR",
+      "status": "created",
+      "method": null,
+      "errorCode": null,
+      "errorDescription": null,
+      "createdAt": "2026-10-15T11:34:41.669Z",
+      "updatedAt": "2026-10-15T11:34:41.669Z"
+    },
+    {
+      "id": "pay_att_1792064081641_516",
+      "orderId": "test_ord_retry_1792064081103",
+      "attemptNumber": 2,
+      "idempotencyKey": "idemp_attempt2_1792064081598",
+      "gateway": "razorpay",
+      "gatewayOrderId": "order_1792064081599_9360",
+      "gatewayPaymentId": null,
+      "amountInPaise": 180000,
+      "currency": "INR",
+      "status": "created",
+      "method": null,
+      "errorCode": null,
+      "errorDescription": null,
+      "createdAt": "2026-10-15T11:34:41.641Z",
+      "updatedAt": "2026-10-15T11:34:41.641Z"
+    },
+    {
+      "id": "pay_att_1792064081589_634",
+      "orderId": "test_ord_retry_1792064081103",
+      "attemptNumber": 1,
+      "idempotencyKey": "idemp_attempt1_1792064081104",
+      "gateway": "razorpay",
+      "gatewayOrderId": "order_1792064081105_4380",
+      "gatewayPaymentId": null,
+      "amountInPaise": 180000,
+      "currency": "INR",
+      "status": "failed",
+      "method": null,
+      "errorCode": null,
+      "errorDescription": null,
+      "createdAt": "2026-10-15T11:34:41.589Z",
+      "updatedAt": "2026-10-15T11:34:41.596Z"
+    },
+    {
+      "id": "att_dup_1792064081092",
+      "orderId": "test_ord_dup_hook_1792064081090",
+      "gatewayOrderId": "order_dup_hook_1792064081090",
+      "amountInPaise": 95000,
+      "status": "captured",
+      "createdAt": "2026-10-15T11:34:41.092Z",
+      "updatedAt": "2026-10-15T11:34:41.096Z",
+      "gatewayPaymentId": "pay_dup_hook_1792064081090",
+      "method": "upi"
+    },
+    {
+      "id": "att_dh_1792064081079",
+      "orderId": "test_ord_delayed_hook_1792064081077",
+      "gatewayOrderId": "order_dh_1792064081077",
+      "amountInPaise": 140000,
+      "status": "captured",
+      "createdAt": "2026-10-15T11:34:41.079Z",
+      "updatedAt": "2026-10-15T11:34:41.081Z",
+      "gatewayPaymentId": "pay_dh_1792064081077",
+      "method": "card"
+    },
+    {
+      "id": "att_abandon_1792064081074",
+      "orderId": "test_ord_cancel_1792064081072",
+      "gatewayOrderId": "order_abandon_1792064081074",
+      "status": "created",
+      "createdAt": "2026-10-15T11:34:41.074Z",
+      "updatedAt": "2026-10-15T11:34:41.074Z"
+    },
+    {
+      "id": "att_fail_1792064081067",
+      "orderId": "test_ord_fail_1792064081065",
+      "gatewayOrderId": "order_test_fail_1792064081065",
+      "amountInPaise": 85000,
+      "currency": "INR",
+      "status": "failed",
+      "createdAt": "2026-10-15T11:34:41.067Z",
+      "updatedAt": "2026-10-15T11:34:41.069Z",
+      "errorCode": "SIGNATURE_VERIFICATION_FAILED",
+      "errorDescription": "HMAC signature did not match server calculated hash"
+    },
+    {
+      "id": "att_1792064081056",
+      "orderId": "test_ord_success_1792064081052",
+      "gatewayOrderId": "order_test_1792064081052",
+      "amountInPaise": 120000,
+      "currency": "INR",
+      "status": "captured",
+      "createdAt": "2026-10-15T11:34:41.056Z",
+      "updatedAt": "2026-10-15T11:34:41.059Z",
+      "gatewayPaymentId": "pay_test_1792064081052",
+      "method": "upi"
+    },
+    {
+      "id": "pay_att_1792061821858_31",
+      "orderId": "kg_ord_1792061821839",
+      "attemptNumber": 1,
+      "idempotencyKey": "idemp_chk_kg_ord_1792061821839_1792061821856",
+      "gateway": "razorpay",
+      "gatewayOrderId": "order_1792061821858_1491",
+      "gatewayPaymentId": "pay_rzp_1792061821929_1914",
+      "amountInPaise": 89900,
+      "currency": "INR",
+      "status": "captured",
+      "method": "upi (bhim)",
+      "errorCode": null,
+      "errorDescription": null,
+      "createdAt": "2026-10-15T10:57:01.858Z",
+      "updatedAt": "2026-10-15T10:57:01.943Z"
+    },
+    {
+      "id": "pay_att_1792049367174_242",
+      "orderId": "kg_ord_1792049367152",
+      "attemptNumber": 1,
+      "idempotencyKey": "idemp_chk_kg_ord_1792049367152_1792049367172",
+      "gateway": "razorpay",
+      "gatewayOrderId": "order_1792049367174_5254",
+      "gatewayPaymentId": "pay_rzp_1792049367244_5464",
+      "amountInPaise": 134700,
+      "currency": "INR",
+      "status": "captured",
+      "method": "upi (gpay)",
+      "errorCode": null,
+      "errorDescription": null,
+      "createdAt": "2026-10-15T07:29:27.174Z",
+      "updatedAt": "2026-10-15T07:29:27.270Z"
+    },
+    {
+      "id": "pay_att_1792038940857_243",
+      "orderId": "kg_ord_1792038940847",
+      "attemptNumber": 1,
+      "idempotencyKey": "idemp_1792038940858",
+      "gateway": "razorpay",
+      "gatewayOrderId": "order_1792038940857_1880",
+      "gatewayPaymentId": "pay_test_verified_123",
+      "amountInPaise": 4900,
+      "currency": "INR",
+      "status": "captured",
+      "method": "upi",
+      "errorCode": null,
+      "errorDescription": null,
+      "createdAt": "2026-10-15T04:35:40.857Z",
+      "updatedAt": "2026-10-15T04:35:40.866Z"
+    },
+    {
+      "id": "pay_att_1792038839680_554",
+      "orderId": "kg_ord_1792038839667",
+      "attemptNumber": 1,
+      "idempotencyKey": "test_idemp_1792038839672",
+      "gateway": "razorpay",
+      "gatewayOrderId": "order_1792038839680_1744",
+      "gatewayPaymentId": null,
+      "amountInPaise": 4900,
+      "currency": "INR",
+      "status": "created",
+      "method": null,
+      "errorCode": null,
+      "errorDescription": null,
+      "createdAt": "2026-10-15T04:33:59.680Z",
+      "updatedAt": "2026-10-15T04:33:59.680Z"
+    },
+    {
+      "id": "att_1792037925617",
+      "orderId": "test_ord_sig_1792037925615",
+      "gatewayOrderId": "order_test_1792037925615",
+      "amountInPaise": 100000,
+      "currency": "INR",
+      "status": "captured",
+      "createdAt": "2026-10-15T04:18:45.617Z",
+      "updatedAt": "2026-10-15T04:18:45.622Z",
+      "errorCode": "SIGNATURE_VERIFICATION_FAILED",
+      "errorDescription": "HMAC signature did not match server calculated hash",
+      "gatewayPaymentId": "pay_test_1792037925615",
+      "method": "upi"
+    },
+    {
+      "id": "pay_att_1792037925610_21",
+      "orderId": "test_ord_idemp_1792037925610",
+      "attemptNumber": 1,
+      "idempotencyKey": "idemp_unique_key_1792037925610",
+      "gateway": "razorpay",
+      "gatewayOrderId": "order_1792037925610_4033",
+      "gatewayPaymentId": null,
+      "amountInPaise": 150000,
+      "currency": "INR",
+      "status": "created",
+      "method": null,
+      "errorCode": null,
+      "errorDescription": null,
+      "createdAt": "2026-10-15T04:18:45.610Z",
+      "updatedAt": "2026-10-15T04:18:45.612Z"
+    },
+    {
+      "id": "att_1792036721751",
+      "orderId": "test_ord_sig_1792036721750",
+      "gatewayOrderId": "order_test_1792036721750",
+      "amountInPaise": 100000,
+      "currency": "INR",
+      "status": "captured",
+      "createdAt": "2026-10-15T03:58:41.751Z",
+      "updatedAt": "2026-10-15T03:58:41.755Z",
+      "errorCode": "SIGNATURE_VERIFICATION_FAILED",
+      "errorDescription": "HMAC signature did not match server calculated hash",
+      "gatewayPaymentId": "pay_test_1792036721750",
+      "method": "upi"
+    },
+    {
+      "id": "pay_att_1792036721744_858",
+      "orderId": "test_ord_idemp_1792036721744",
+      "attemptNumber": 1,
+      "idempotencyKey": "idemp_unique_key_1792036721744",
+      "gateway": "razorpay",
+      "gatewayOrderId": "order_1792036721744_4048",
+      "gatewayPaymentId": null,
+      "amountInPaise": 150000,
+      "currency": "INR",
+      "status": "created",
+      "method": null,
+      "errorCode": null,
+      "errorDescription": null,
+      "createdAt": "2026-10-15T03:58:41.744Z",
+      "updatedAt": "2026-10-15T03:58:41.744Z"
+    },
+    {
+      "id": "pay_att_1001",
+      "orderId": "kg_ord_1001",
+      "attemptNumber": 1,
+      "idempotencyKey": "idemp_order1_init",
+      "gateway": "razorpay",
+      "gatewayOrderId": "order_KG94821_RZP",
+      "gatewayPaymentId": "pay_KG94821_RZP_01",
+      "amountInPaise": 119900,
+      "currency": "INR",
+      "status": "captured",
+      "method": "upi",
+      "vpa": "pooja@okhdfcbank",
+      "errorCode": null,
+      "errorDescription": null,
+      "createdAt": "2026-10-08T03:58:41.739Z"
+    },
+    {
+      "id": "pay_att_1002",
+      "orderId": "kg_ord_1002",
+      "attemptNumber": 1,
+      "idempotencyKey": "idemp_order2_init",
+      "gateway": "razorpay",
+      "gatewayOrderId": "order_KG94855_RZP",
+      "gatewayPaymentId": "pay_KG94855_RZP_02",
+      "amountInPaise": 185000,
+      "currency": "INR",
+      "status": "captured",
+      "method": "card",
+      "errorCode": null,
+      "errorDescription": null,
+      "createdAt": "2026-10-12T03:58:41.739Z"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "txn_1792064142726_28",
+      "orderId": "ord_strict_deliv_1792064142715",
+      "paymentAttemptId": null,
+      "transactionType": "payout",
+      "amount": 1050,
+      "currency": "INR",
+      "status": "success",
+      "gatewayReference": "HDFCR2064142723586",
+      "metadata": {
+        "sellerId": "creator_settle_strict_1792064142715",
+        "settlementReference": "SETTL-PUN-20261015-423",
+        "bank": "ICICI Bank"
+      },
+      "createdAt": "2026-10-15T11:35:42.726Z",
+      "updatedAt": "2026-10-15T11:35:42.726Z"
+    },
+    {
+      "id": "txn_1792064142685_115",
+      "orderId": "test_ord_refund_flow_1792064142679",
+      "paymentAttemptId": null,
+      "transactionType": "refund",
+      "amount": 1500,
+      "currency": "INR",
+      "status": "success",
+      "gatewayReference": "rfnd_1792064142682_9204",
+      "metadata": {
+        "reason": "Customer cancelled prior to dispatch",
+        "paymentMethod": "UPI"
+      },
+      "createdAt": "2026-10-15T11:35:42.685Z",
+      "updatedAt": "2026-10-15T11:35:42.685Z"
+    },
+    {
+      "id": "txn_1792064142480_700",
+      "orderId": "test_ord_dup_hook_1792064142469",
+      "paymentAttemptId": "att_dup_1792064142471",
+      "transactionType": "payment",
+      "amount": 950,
+      "status": "success",
+      "gatewayReference": "pay_dup_hook_1792064142469",
+      "metadata": {
+        "method": "upi"
+      },
+      "createdAt": "2026-10-15T11:35:42.480Z",
+      "updatedAt": "2026-10-15T11:35:42.480Z"
+    },
+    {
+      "id": "txn_1792064142465_505",
+      "orderId": "test_ord_delayed_hook_1792064142457",
+      "paymentAttemptId": "att_dh_1792064142459",
+      "transactionType": "payment",
+      "amount": 1400,
+      "status": "success",
+      "gatewayReference": "pay_dh_1792064142457",
+      "metadata": {
+        "method": "Card"
+      },
+      "createdAt": "2026-10-15T11:35:42.465Z",
+      "updatedAt": "2026-10-15T11:35:42.465Z"
+    },
+    {
+      "id": "txn_1792064142441_152",
+      "orderId": "test_ord_success_1792064142431",
+      "paymentAttemptId": "att_1792064142435",
+      "transactionType": "payment",
+      "amount": 1200,
+      "currency": "INR",
+      "status": "success",
+      "gatewayReference": "pay_test_1792064142431",
+      "metadata": {
+        "method": "UPI"
+      },
+      "createdAt": "2026-10-15T11:35:42.441Z",
+      "updatedAt": "2026-10-15T11:35:42.441Z"
+    },
+    {
+      "id": "txn_1792064081720_336",
+      "orderId": "ord_strict_deliv_1792064081704",
+      "paymentAttemptId": null,
+      "transactionType": "payout",
+      "amount": 1050,
+      "currency": "INR",
+      "status": "success",
+      "gatewayReference": "HDFCR2064081717108",
+      "metadata": {
+        "sellerId": "creator_settle_strict_1792064081704",
+        "settlementReference": "SETTL-PUN-20261015-498",
+        "bank": "ICICI Bank"
+      },
+      "createdAt": "2026-10-15T11:34:41.720Z",
+      "updatedAt": "2026-10-15T11:34:41.720Z"
+    },
+    {
+      "id": "txn_1792064081684_172",
+      "orderId": "test_ord_refund_flow_1792064081674",
+      "paymentAttemptId": null,
+      "transactionType": "refund",
+      "amount": 1500,
+      "currency": "INR",
+      "status": "success",
+      "gatewayReference": "rfnd_1792064081679_7512",
+      "metadata": {
+        "reason": "Customer cancelled prior to dispatch",
+        "paymentMethod": "UPI"
+      },
+      "createdAt": "2026-10-15T11:34:41.684Z",
+      "updatedAt": "2026-10-15T11:34:41.684Z"
+    },
+    {
+      "id": "txn_1792064081098_998",
+      "orderId": "test_ord_dup_hook_1792064081090",
+      "paymentAttemptId": "att_dup_1792064081092",
+      "transactionType": "payment",
+      "amount": 950,
+      "status": "success",
+      "gatewayReference": "pay_dup_hook_1792064081090",
+      "metadata": {
+        "method": "upi"
+      },
+      "createdAt": "2026-10-15T11:34:41.098Z",
+      "updatedAt": "2026-10-15T11:34:41.098Z"
+    },
+    {
+      "id": "txn_1792064081085_34",
+      "orderId": "test_ord_delayed_hook_1792064081077",
+      "paymentAttemptId": "att_dh_1792064081079",
+      "transactionType": "payment",
+      "amount": 1400,
+      "status": "success",
+      "gatewayReference": "pay_dh_1792064081077",
+      "metadata": {
+        "method": "Card"
+      },
+      "createdAt": "2026-10-15T11:34:41.085Z",
+      "updatedAt": "2026-10-15T11:34:41.085Z"
+    },
+    {
+      "id": "txn_1792064081062_875",
+      "orderId": "test_ord_success_1792064081052",
+      "paymentAttemptId": "att_1792064081056",
+      "transactionType": "payment",
+      "amount": 1200,
+      "currency": "INR",
+      "status": "success",
+      "gatewayReference": "pay_test_1792064081052",
+      "metadata": {
+        "method": "UPI"
+      },
+      "createdAt": "2026-10-15T11:34:41.062Z",
+      "updatedAt": "2026-10-15T11:34:41.062Z"
+    },
+    {
+      "id": "txn_1792061821949_184",
+      "orderId": "kg_ord_1792061821839",
+      "paymentAttemptId": "pay_att_1792061821858_31",
+      "transactionType": "payment",
+      "amount": 899,
+      "currency": "INR",
+      "status": "success",
+      "gatewayReference": "pay_rzp_1792061821929_1914",
+      "metadata": {
+        "method": "UPI (BHIM)",
+        "vpa": "sanket@okhdfcbank"
+      },
+      "createdAt": "2026-10-15T10:57:01.949Z",
+      "updatedAt": "2026-10-15T10:57:01.949Z"
+    },
+    {
+      "id": "txn_1792049367277_999",
+      "orderId": "kg_ord_1792049367152",
+      "paymentAttemptId": "pay_att_1792049367174_242",
+      "transactionType": "payment",
+      "amount": 1347,
+      "currency": "INR",
+      "status": "success",
+      "gatewayReference": "pay_rzp_1792049367244_5464",
+      "metadata": {
+        "method": "UPI (GPAY)",
+        "vpa": "sanket@okhdfcbank"
+      },
+      "createdAt": "2026-10-15T07:29:27.277Z",
+      "updatedAt": "2026-10-15T07:29:27.277Z"
+    },
+    {
+      "id": "txn_1792038940870_352",
+      "orderId": "kg_ord_1792038940847",
+      "paymentAttemptId": "pay_att_1792038940857_243",
+      "transactionType": "payment",
+      "amount": 49,
+      "currency": "INR",
+      "status": "success",
+      "gatewayReference": "pay_test_verified_123",
+      "metadata": {
+        "method": "UPI"
+      },
+      "createdAt": "2026-10-15T04:35:40.870Z",
+      "updatedAt": "2026-10-15T04:35:40.870Z"
+    },
+    {
+      "id": "txn_1792037925649_170",
+      "orderId": "ord_refund_1792037925643",
+      "paymentAttemptId": null,
+      "transactionType": "refund",
+      "amount": 999,
+      "currency": "INR",
+      "status": "success",
+      "gatewayReference": "rfnd_1792037925646_6296",
+      "metadata": {
+        "reason": "Customer cancelled before dispatch",
+        "paymentMethod": "UPI"
+      },
+      "createdAt": "2026-10-15T04:18:45.649Z",
+      "updatedAt": "2026-10-15T04:18:45.649Z"
+    },
+    {
+      "id": "txn_1792037925640_273",
+      "orderId": "ord_unfulfilled_1792037925633",
+      "paymentAttemptId": null,
+      "transactionType": "payout",
+      "amount": 850,
+      "currency": "INR",
+      "status": "success",
+      "gatewayReference": "HDFCR2037925638816",
+      "metadata": {
+        "sellerId": "creator_double_settle_test",
+        "settlementReference": "SETTL-PUN-20261015-231",
+        "bank": "HDFC Bank"
+      },
+      "createdAt": "2026-10-15T04:18:45.640Z",
+      "updatedAt": "2026-10-15T04:18:45.640Z"
+    },
+    {
+      "id": "txn_1792037925625_499",
+      "orderId": "test_ord_sig_1792037925615",
+      "paymentAttemptId": "att_1792037925617",
+      "transactionType": "payment",
+      "amount": 1000,
+      "currency": "INR",
+      "status": "success",
+      "gatewayReference": "pay_test_1792037925615",
+      "metadata": {
+        "method": "UPI"
+      },
+      "createdAt": "2026-10-15T04:18:45.625Z",
+      "updatedAt": "2026-10-15T04:18:45.625Z"
+    },
+    {
+      "id": "txn_1792036721777_759",
+      "orderId": "ord_refund_1792036721772",
+      "paymentAttemptId": null,
+      "transactionType": "refund",
+      "amount": 999,
+      "currency": "INR",
+      "status": "success",
+      "gatewayReference": "rfnd_1792036721775_5063",
+      "metadata": {
+        "reason": "Customer cancelled before dispatch",
+        "paymentMethod": "UPI"
+      },
+      "createdAt": "2026-10-15T03:58:41.777Z",
+      "updatedAt": "2026-10-15T03:58:41.777Z"
+    },
+    {
+      "id": "txn_1792036721770_874",
+      "orderId": "ord_unfulfilled_1792036721764",
+      "paymentAttemptId": null,
+      "transactionType": "payout",
+      "amount": 850,
+      "currency": "INR",
+      "status": "success",
+      "gatewayReference": "HDFCR2036721768991",
+      "metadata": {
+        "sellerId": "creator_double_settle_test",
+        "settlementReference": "SETTL-PUN-20261015-451",
+        "bank": "HDFC Bank"
+      },
+      "createdAt": "2026-10-15T03:58:41.770Z",
+      "updatedAt": "2026-10-15T03:58:41.770Z"
+    },
+    {
+      "id": "txn_1792036721757_963",
+      "orderId": "test_ord_sig_1792036721750",
+      "paymentAttemptId": "att_1792036721751",
+      "transactionType": "payment",
+      "amount": 1000,
+      "currency": "INR",
+      "status": "success",
+      "gatewayReference": "pay_test_1792036721750",
+      "metadata": {
+        "method": "UPI"
+      },
+      "createdAt": "2026-10-15T03:58:41.757Z",
+      "updatedAt": "2026-10-15T03:58:41.757Z"
+    },
+    {
+      "id": "txn_1001_pay",
+      "orderId": "kg_ord_1001",
+      "paymentAttemptId": "pay_att_1001",
+      "transactionType": "payment",
+      "amount": 1199,
+      "currency": "INR",
+      "status": "success",
+      "gatewayReference": "pay_KG94821_RZP_01",
+      "metadata": {
+        "method": "upi",
+        "bank": "HDFC Bank"
+      },
+      "createdAt": "2026-10-08T03:58:41.739Z"
+    },
+    {
+      "id": "txn_1002_pay",
+      "orderId": "kg_ord_1002",
+      "paymentAttemptId": "pay_att_1002",
+      "transactionType": "payment",
+      "amount": 1850,
+      "currency": "INR",
+      "status": "success",
+      "gatewayReference": "pay_KG94855_RZP_02",
+      "metadata": {
+        "method": "card",
+        "cardType": "RuPay Platinum",
+        "last4": "8812"
+      },
+      "createdAt": "2026-10-12T03:58:41.739Z"
+    }
+  ],
+  "refunds": [
+    {
+      "id": "ref_1792064142682_46",
+      "orderId": "test_ord_refund_flow_1792064142679",
+      "paymentId": "pay_refund_flow_123",
+      "amount": 1500,
+      "reason": "Customer cancelled prior to dispatch",
+      "status": "processed",
+      "gatewayRefundId": "rfnd_1792064142682_9204",
+      "requestedBy": "customer",
+      "approvedBy": "system_auto_approved",
+      "notes": "Refund processed to original payment method (UPI)",
+      "processedAt": "2026-10-15T11:35:42.682Z",
+      "createdAt": "2026-10-15T11:35:42.682Z",
+      "updatedAt": "2026-10-15T11:35:42.682Z"
+    },
+    {
+      "id": "ref_1792064081679_873",
+      "orderId": "test_ord_refund_flow_1792064081674",
+      "paymentId": "pay_refund_flow_123",
+      "amount": 1500,
+      "reason": "Customer cancelled prior to dispatch",
+      "status": "processed",
+      "gatewayRefundId": "rfnd_1792064081679_7512",
+      "requestedBy": "customer",
+      "approvedBy": "system_auto_approved",
+      "notes": "Refund processed to original payment method (UPI)",
+      "processedAt": "2026-10-15T11:34:41.679Z",
+      "createdAt": "2026-10-15T11:34:41.679Z",
+      "updatedAt": "2026-10-15T11:34:41.679Z"
+    },
+    {
+      "id": "ref_1792037925646_633",
+      "orderId": "ord_refund_1792037925643",
+      "paymentId": "pay_test_refund_123",
+      "amount": 999,
+      "reason": "Customer cancelled before dispatch",
+      "status": "processed",
+      "gatewayRefundId": "rfnd_1792037925646_6296",
+      "requestedBy": "customer",
+      "approvedBy": "system_auto_approved",
+      "notes": "Refund processed to original payment method (UPI)",
+      "processedAt": "2026-10-15T04:18:45.646Z",
+      "createdAt": "2026-10-15T04:18:45.646Z",
+      "updatedAt": "2026-10-15T04:18:45.646Z"
+    },
+    {
+      "id": "ref_1792036721775_379",
+      "orderId": "ord_refund_1792036721772",
+      "paymentId": "pay_test_refund_123",
+      "amount": 999,
+      "reason": "Customer cancelled before dispatch",
+      "status": "processed",
+      "gatewayRefundId": "rfnd_1792036721775_5063",
+      "requestedBy": "customer",
+      "approvedBy": "system_auto_approved",
+      "notes": "Refund processed to original payment method (UPI)",
+      "processedAt": "2026-10-15T03:58:41.775Z",
+      "createdAt": "2026-10-15T03:58:41.775Z",
+      "updatedAt": "2026-10-15T03:58:41.775Z"
+    }
+  ],
+  "seller_payout_accounts": [
+    {
+      "id": "acc_strict_1792064142715",
+      "sellerId": "creator_settle_strict_1792064142715",
+      "accountHolderName": "Pooja Patil",
+      "accountNumber": "918204928190",
+      "accountNumberMasked": "•••• •••• •••• 8190",
+      "ifscCode": "ICIC0000341",
+      "bankName": "ICICI Bank",
+      "verificationStatus": "verified",
+      "createdAt": "2026-10-15T11:35:42.715Z",
+      "updatedAt": "2026-10-15T11:35:42.715Z"
+    },
+    {
+      "id": "acc_strict_1792064081704",
+      "sellerId": "creator_settle_strict_1792064081704",
+      "accountHolderName": "Pooja Patil",
+      "accountNumber": "918204928190",
+      "accountNumberMasked": "•••• •••• •••• 8190",
+      "ifscCode": "ICIC0000341",
+      "bankName": "ICICI Bank",
+      "verificationStatus": "verified",
+      "createdAt": "2026-10-15T11:34:41.704Z",
+      "updatedAt": "2026-10-15T11:34:41.704Z"
+    },
+    {
+      "id": "acc_test_1792037925632",
+      "sellerId": "creator_double_settle_test",
+      "accountHolderName": "Priya Sharma",
+      "accountNumber": "91820492810",
+      "accountNumberMasked": "•••• •••• •••• 2810",
+      "ifscCode": "HDFC0001822",
+      "bankName": "HDFC Bank",
+      "upiVpa": "priya@okhdfcbank",
+      "verificationStatus": "verified",
+      "createdAt": "2026-10-15T04:18:45.632Z",
+      "updatedAt": "2026-10-15T04:18:45.632Z"
+    },
+    {
+      "id": "acc_test_1792036721763",
+      "sellerId": "creator_double_settle_test",
+      "accountHolderName": "Priya Sharma",
+      "accountNumber": "91820492810",
+      "accountNumberMasked": "•••• •••• •••• 2810",
+      "ifscCode": "HDFC0001822",
+      "bankName": "HDFC Bank",
+      "upiVpa": "priya@okhdfcbank",
+      "verificationStatus": "verified",
+      "createdAt": "2026-10-15T03:58:41.763Z",
+      "updatedAt": "2026-10-15T03:58:41.763Z"
+    },
+    {
+      "id": "payout_acc_1",
+      "sellerId": "creator_1",
+      "accountHolderName": "Ananya Mukherjee",
+      "accountNumber": "91823481239102",
+      "accountNumberMasked": "•••• •••• •••• 9102",
+      "ifscCode": "HDFC0001822",
+      "bankName": "HDFC Bank, Kothrud Pune",
+      "upiVpa": "ananya.mukherjee@okhdfcbank",
+      "verificationStatus": "verified",
+      "linkedAccountId": "acc_rzp_linked_ananya_01",
+      "createdAt": "2026-01-10T10:00:00.000Z",
+      "updatedAt": "2026-01-10T10:00:00.000Z"
+    },
+    {
+      "id": "payout_acc_2",
+      "sellerId": "creator_2",
+      "accountHolderName": "Sunita Devi",
+      "accountNumber": "50100492817291",
+      "accountNumberMasked": "•••• •••• •••• 7291",
+      "ifscCode": "SBIN0004521",
+      "bankName": "State Bank of India, Alandi Pune",
+      "upiVpa": "sunitadevi@oksbi",
+      "verificationStatus": "verified",
+      "linkedAccountId": "acc_rzp_linked_sunita_02",
+      "createdAt": "2026-02-14T11:30:00.000Z",
+      "updatedAt": "2026-02-14T11:30:00.000Z"
+    },
+    {
+      "id": "payout_acc_me",
+      "sellerId": "creator_me",
+      "accountHolderName": "Sanket Joshi",
+      "accountNumber": "382910482910",
+      "accountNumberMasked": "•••• •••• •••• 2910",
+      "ifscCode": "ICIC0000341",
+      "bankName": "ICICI Bank, Deccan Gymkhana Pune",
+      "upiVpa": "sanket.craft@okicici",
+      "verificationStatus": "verified",
+      "linkedAccountId": "acc_rzp_linked_me_03",
+      "createdAt": "2026-03-01T09:00:00.000Z",
+      "updatedAt": "2026-03-01T09:00:00.000Z"
+    }
+  ],
+  "commission_rules": [
+    {
+      "id": "comm_default",
+      "categoryId": "*",
+      "categoryName": "All Other Crafts (Default)",
+      "commissionPercentage": 12,
+      "fixedFee": 15,
+      "isDefault": true,
+      "updatedBy": "system",
+      "updatedAt": "2026-10-15T03:58:41.738Z"
+    },
+    {
+      "id": "comm_crochet",
+      "categoryId": "crochet",
+      "categoryName": "Crochet & Fiber Art",
+      "commissionPercentage": 10,
+      "fixedFee": 10,
+      "isDefault": false,
+      "updatedBy": "system",
+      "updatedAt": "2026-10-15T03:58:41.739Z"
+    },
+    {
+      "id": "comm_jewellery",
+      "categoryId": "jewellery",
+      "categoryName": "Handmade Jewellery",
+      "commissionPercentage": 15,
+      "fixedFee": 20,
+      "isDefault": false,
+      "updatedBy": "system",
+      "updatedAt": "2026-10-15T03:58:41.739Z"
+    },
+    {
+      "id": "comm_resin",
+      "categoryId": "resin",
+      "categoryName": "Resin Art & Botanicals",
+      "commissionPercentage": 12,
+      "fixedFee": 15,
+      "isDefault": false,
+      "updatedBy": "system",
+      "updatedAt": "2026-10-15T03:58:41.739Z"
+    },
+    {
+      "id": "comm_pottery",
+      "categoryId": "pottery",
+      "categoryName": "Studio Ceramics & Pottery",
+      "commissionPercentage": 8,
+      "fixedFee": 10,
+      "isDefault": false,
+      "updatedBy": "system",
+      "updatedAt": "2026-10-15T03:58:41.739Z"
+    },
+    {
+      "id": "comm_paintings",
+      "categoryId": "paintings",
+      "categoryName": "Traditional Folk Paintings & Heritage Art",
+      "commissionPercentage": 15,
+      "fixedFee": 25,
+      "isDefault": false,
+      "updatedBy": "system",
+      "updatedAt": "2026-10-15T03:58:41.739Z"
+    },
+    {
+      "id": "comm_candles",
+      "categoryId": "candles",
+      "categoryName": "Organic Soy & Beeswax Candles",
+      "commissionPercentage": 10,
+      "fixedFee": 10,
+      "isDefault": false,
+      "updatedBy": "system",
+      "updatedAt": "2026-10-15T03:58:41.739Z"
+    }
+  ],
+  "order_seller_commissions": [
+    {
+      "id": "comm_iso_2_1792064142732",
+      "orderId": "ord_iso_2",
+      "sellerId": "creator_isolated_2",
+      "grossAmount": 8000,
+      "netSellerAmount": 7100,
+      "settlementStatus": "pending",
+      "createdAt": "2026-10-15T11:35:42.732Z",
+      "updatedAt": "2026-10-15T11:35:42.732Z"
+    },
+    {
+      "id": "comm_iso_1_1792064142730",
+      "orderId": "ord_iso_1",
+      "sellerId": "creator_isolated_1",
+      "grossAmount": 5000,
+      "netSellerAmount": 4400,
+      "settlementStatus": "pending",
+      "createdAt": "2026-10-15T11:35:42.730Z",
+      "updatedAt": "2026-10-15T11:35:42.730Z"
+    },
+    {
+      "id": "comm_strict_1792064142719",
+      "orderId": "ord_strict_deliv_1792064142715",
+      "sellerId": "creator_settle_strict_1792064142715",
+      "grossAmount": 1200,
+      "netSellerAmount": 1050,
+      "settlementStatus": "settled",
+      "createdAt": "2026-10-15T11:35:42.719Z",
+      "updatedAt": "2026-10-15T11:35:42.725Z",
+      "settlementId": "set_1792064142723_50",
+      "settledAt": "2026-10-15T11:35:42.725Z"
+    },
+    {
+      "id": "comm_rec_1792064142712_650",
+      "orderId": "test_multi_seller_1792064142694",
+      "orderNumber": "KG-MULTI-SELL",
+      "sellerId": "creator_1",
+      "sellerName": "Ananya Mukherjee",
+      "grossAmount": 1500,
+      "discountShare": 0,
+      "netOrderValue": 1500,
+      "commissionPercentage": 10,
+      "fixedFee": 10,
+      "platformCommission": 160,
+      "gatewayFee": 30,
+      "netSellerAmount": 1310,
+      "settlementStatus": "pending",
+      "settlementId": null,
+      "settledAt": null,
+      "createdAt": "2026-10-15T11:35:42.712Z",
+      "updatedAt": "2026-10-15T11:35:42.712Z"
+    },
+    {
+      "id": "comm_rec_1792064142711_655",
+      "orderId": "test_multi_seller_1792064142694",
+      "orderNumber": "KG-MULTI-SELL",
+      "sellerId": "creator_me",
+      "sellerName": "Sanket Joshi",
+      "grossAmount": 2000,
+      "discountShare": 0,
+      "netOrderValue": 2000,
+      "commissionPercentage": 12,
+      "fixedFee": 15,
+      "platformCommission": 255,
+      "gatewayFee": 40,
+      "netSellerAmount": 1705,
+      "settlementStatus": "pending",
+      "settlementId": null,
+      "settledAt": null,
+      "createdAt": "2026-10-15T11:35:42.711Z",
+      "updatedAt": "2026-10-15T11:35:42.711Z"
+    },
+    {
+      "id": "comm_flow_1792064142680",
+      "orderId": "test_ord_refund_flow_1792064142679",
+      "sellerId": "creator_1",
+      "grossAmount": 1500,
+      "netSellerAmount": 1300,
+      "settlementStatus": "withheld",
+      "createdAt": "2026-10-15T11:35:42.680Z",
+      "updatedAt": "2026-10-15T11:35:42.687Z"
+    },
+    {
+      "id": "comm_iso_2_1792064081726",
+      "orderId": "ord_iso_2",
+      "sellerId": "creator_isolated_2",
+      "grossAmount": 8000,
+      "netSellerAmount": 7100,
+      "settlementStatus": "pending",
+      "createdAt": "2026-10-15T11:34:41.726Z",
+      "updatedAt": "2026-10-15T11:34:41.726Z"
+    },
+    {
+      "id": "comm_iso_1_1792064081725",
+      "orderId": "ord_iso_1",
+      "sellerId": "creator_isolated_1",
+      "grossAmount": 5000,
+      "netSellerAmount": 4400,
+      "settlementStatus": "pending",
+      "createdAt": "2026-10-15T11:34:41.725Z",
+      "updatedAt": "2026-10-15T11:34:41.725Z"
+    },
+    {
+      "id": "comm_strict_1792064081708",
+      "orderId": "ord_strict_deliv_1792064081704",
+      "sellerId": "creator_settle_strict_1792064081704",
+      "grossAmount": 1200,
+      "netSellerAmount": 1050,
+      "settlementStatus": "settled",
+      "createdAt": "2026-10-15T11:34:41.708Z",
+      "updatedAt": "2026-10-15T11:34:41.718Z",
+      "settlementId": "set_1792064081717_534",
+      "settledAt": "2026-10-15T11:34:41.718Z"
+    },
+    {
+      "id": "comm_rec_1792064081701_577",
+      "orderId": "test_multi_seller_1792064081690",
+      "orderNumber": "KG-MULTI-SELL",
+      "sellerId": "creator_1",
+      "sellerName": "Ananya Mukherjee",
+      "grossAmount": 1500,
+      "discountShare": 0,
+      "netOrderValue": 1500,
+      "commissionPercentage": 10,
+      "fixedFee": 10,
+      "platformCommission": 160,
+      "gatewayFee": 30,
+      "netSellerAmount": 1310,
+      "settlementStatus": "pending",
+      "settlementId": null,
+      "settledAt": null,
+      "createdAt": "2026-10-15T11:34:41.701Z",
+      "updatedAt": "2026-10-15T11:34:41.701Z"
+    },
+    {
+      "id": "comm_rec_1792064081698_666",
+      "orderId": "test_multi_seller_1792064081690",
+      "orderNumber": "KG-MULTI-SELL",
+      "sellerId": "creator_me",
+      "sellerName": "Sanket Joshi",
+      "grossAmount": 2000,
+      "discountShare": 0,
+      "netOrderValue": 2000,
+      "commissionPercentage": 12,
+      "fixedFee": 15,
+      "platformCommission": 255,
+      "gatewayFee": 40,
+      "netSellerAmount": 1705,
+      "settlementStatus": "pending",
+      "settlementId": null,
+      "settledAt": null,
+      "createdAt": "2026-10-15T11:34:41.699Z",
+      "updatedAt": "2026-10-15T11:34:41.699Z"
+    },
+    {
+      "id": "comm_flow_1792064081676",
+      "orderId": "test_ord_refund_flow_1792064081674",
+      "sellerId": "creator_1",
+      "grossAmount": 1500,
+      "netSellerAmount": 1300,
+      "settlementStatus": "withheld",
+      "createdAt": "2026-10-15T11:34:41.676Z",
+      "updatedAt": "2026-10-15T11:34:41.686Z"
+    },
+    {
+      "id": "comm_rec_1792061821952_501",
+      "orderId": "kg_ord_1792061821839",
+      "orderNumber": "KG-94891",
+      "sellerId": "creator_2",
+      "sellerName": "Sunita Devi",
+      "grossAmount": 899,
+      "discountShare": 0,
+      "netOrderValue": 899,
+      "commissionPercentage": 15,
+      "fixedFee": 25,
+      "platformCommission": 159.85,
+      "gatewayFee": 17.98,
+      "netSellerAmount": 721.17,
+      "settlementStatus": "pending",
+      "settlementId": null,
+      "settledAt": null,
+      "createdAt": "2026-10-15T10:57:01.952Z",
+      "updatedAt": "2026-10-15T10:57:01.952Z"
+    },
+    {
+      "id": "comm_rec_1792049367285_474",
+      "orderId": "kg_ord_1792049367152",
+      "orderNumber": "KG-20204",
+      "sellerId": "creator_6",
+      "sellerName": "Meera Sen",
+      "grossAmount": 499,
+      "discountShare": 0,
+      "netOrderValue": 499,
+      "commissionPercentage": 12,
+      "fixedFee": 15,
+      "platformCommission": 74.88,
+      "gatewayFee": 9.98,
+      "netSellerAmount": 414.14,
+      "settlementStatus": "pending",
+      "settlementId": null,
+      "settledAt": null,
+      "createdAt": "2026-10-15T07:29:27.285Z",
+      "updatedAt": "2026-10-15T07:29:27.285Z"
+    },
+    {
+      "id": "comm_rec_1792049367283_672",
+      "orderId": "kg_ord_1792049367152",
+      "orderNumber": "KG-20204",
+      "sellerId": "creator_3",
+      "sellerName": "Rajesh Prajapati",
+      "grossAmount": 549,
+      "discountShare": 0,
+      "netOrderValue": 549,
+      "commissionPercentage": 8,
+      "fixedFee": 10,
+      "platformCommission": 53.92,
+      "gatewayFee": 10.98,
+      "netSellerAmount": 484.1,
+      "settlementStatus": "pending",
+      "settlementId": null,
+      "settledAt": null,
+      "createdAt": "2026-10-15T07:29:27.283Z",
+      "updatedAt": "2026-10-15T07:29:27.283Z"
+    },
+    {
+      "id": "comm_rec_1792049367280_981",
+      "orderId": "kg_ord_1792049367152",
+      "orderNumber": "KG-20204",
+      "sellerId": "creator_1",
+      "sellerName": "Ananya Mukherjee",
+      "grossAmount": 299,
+      "discountShare": 0,
+      "netOrderValue": 299,
+      "commissionPercentage": 10,
+      "fixedFee": 10,
+      "platformCommission": 39.9,
+      "gatewayFee": 5.98,
+      "netSellerAmount": 253.12,
+      "settlementStatus": "pending",
+      "settlementId": null,
+      "settledAt": null,
+      "createdAt": "2026-10-15T07:29:27.280Z",
+      "updatedAt": "2026-10-15T07:29:27.280Z"
+    },
+    {
+      "id": "comm_rec_1792038940872_285",
+      "orderId": "kg_ord_1792038940847",
+      "orderNumber": "KG-53127",
+      "sellerId": "creator_me",
+      "sellerName": "Artisan Maker",
+      "grossAmount": 0,
+      "discountShare": 0,
+      "netOrderValue": 0,
+      "commissionPercentage": 12,
+      "fixedFee": 15,
+      "platformCommission": 15,
+      "gatewayFee": 0,
+      "netSellerAmount": 0,
+      "settlementStatus": "pending",
+      "settlementId": null,
+      "settledAt": null,
+      "createdAt": "2026-10-15T04:35:40.872Z",
+      "updatedAt": "2026-10-15T04:35:40.872Z"
+    },
+    {
+      "id": "comm_ref_test_1792037925645",
+      "orderId": "ord_refund_1792037925643",
+      "orderNumber": "KG-REF-TEST",
+      "sellerId": "creator_1",
+      "grossAmount": 999,
+      "netSellerAmount": 840,
+      "settlementStatus": "withheld",
+      "createdAt": "2026-10-15T04:18:45.645Z",
+      "updatedAt": "2026-10-15T04:18:45.650Z"
+    },
+    {
+      "id": "comm_unfulfilled_1792037925635",
+      "orderId": "ord_unfulfilled_1792037925633",
+      "orderNumber": "KG-UNFUL",
+      "sellerId": "creator_double_settle_test",
+      "sellerName": "Priya Sharma",
+      "grossAmount": 1000,
+      "netSellerAmount": 850,
+      "settlementStatus": "settled",
+      "settlementId": "set_1792037925638_93",
+      "settledAt": "2026-10-15T04:18:45.639Z",
+      "createdAt": "2026-10-15T04:18:45.635Z",
+      "updatedAt": "2026-10-15T04:18:45.639Z"
+    },
+    {
+      "id": "comm_rec_1792037925631_862",
+      "orderId": "test_ord_comm_1792037925628",
+      "orderNumber": "KG-COMM-1792037925628",
+      "sellerId": "creator_1",
+      "sellerName": "Ananya Mukherjee",
+      "grossAmount": 2000,
+      "discountShare": 200,
+      "netOrderValue": 1800,
+      "commissionPercentage": 10,
+      "fixedFee": 10,
+      "platformCommission": 190,
+      "gatewayFee": 36,
+      "netSellerAmount": 1574,
+      "settlementStatus": "pending",
+      "settlementId": null,
+      "settledAt": null,
+      "createdAt": "2026-10-15T04:18:45.631Z",
+      "updatedAt": "2026-10-15T04:18:45.631Z"
+    },
+    {
+      "id": "comm_ref_test_1792036721774",
+      "orderId": "ord_refund_1792036721772",
+      "orderNumber": "KG-REF-TEST",
+      "sellerId": "creator_1",
+      "grossAmount": 999,
+      "netSellerAmount": 840,
+      "settlementStatus": "withheld",
+      "createdAt": "2026-10-15T03:58:41.774Z",
+      "updatedAt": "2026-10-15T03:58:41.778Z"
+    },
+    {
+      "id": "comm_unfulfilled_1792036721766",
+      "orderId": "ord_unfulfilled_1792036721764",
+      "orderNumber": "KG-UNFUL",
+      "sellerId": "creator_double_settle_test",
+      "sellerName": "Priya Sharma",
+      "grossAmount": 1000,
+      "netSellerAmount": 850,
+      "settlementStatus": "settled",
+      "settlementId": "set_1792036721768_461",
+      "settledAt": "2026-10-15T03:58:41.769Z",
+      "createdAt": "2026-10-15T03:58:41.766Z",
+      "updatedAt": "2026-10-15T03:58:41.769Z"
+    },
+    {
+      "id": "comm_rec_1792036721761_794",
+      "orderId": "test_ord_comm_1792036721759",
+      "orderNumber": "KG-COMM-1792036721759",
+      "sellerId": "creator_1",
+      "sellerName": "Ananya Mukherjee",
+      "grossAmount": 2000,
+      "discountShare": 200,
+      "netOrderValue": 1800,
+      "commissionPercentage": 10,
+      "fixedFee": 10,
+      "platformCommission": 190,
+      "gatewayFee": 36,
+      "netSellerAmount": 1574,
+      "settlementStatus": "pending",
+      "settlementId": null,
+      "settledAt": null,
+      "createdAt": "2026-10-15T03:58:41.761Z",
+      "updatedAt": "2026-10-15T03:58:41.761Z"
+    },
+    {
+      "id": "comm_rec_1001",
+      "orderId": "kg_ord_1001",
+      "orderNumber": "KG-94821",
+      "sellerId": "creator_1",
+      "sellerName": "Ananya Mukherjee",
+      "grossAmount": 1299,
+      "discountShare": 100,
+      "netOrderValue": 1199,
+      "commissionPercentage": 10,
+      "fixedFee": 10,
+      "platformCommission": 139.9,
+      "gatewayFee": 23.98,
+      "netSellerAmount": 1035.12,
+      "settlementStatus": "settled",
+      "settlementId": "set_ref_98012",
+      "settledAt": "2026-10-12T03:58:41.739Z"
+    },
+    {
+      "id": "comm_rec_1002",
+      "orderId": "kg_ord_1002",
+      "orderNumber": "KG-94855",
+      "sellerId": "creator_1",
+      "sellerName": "Ananya Mukherjee",
+      "grossAmount": 1850,
+      "discountShare": 0,
+      "netOrderValue": 1850,
+      "commissionPercentage": 10,
+      "fixedFee": 10,
+      "platformCommission": 195,
+      "gatewayFee": 37,
+      "netSellerAmount": 1618,
+      "settlementStatus": "pending",
+      "settlementId": null,
+      "settledAt": null
+    }
+  ],
+  "seller_settlements": [
+    {
+      "id": "set_1792064142723_50",
+      "settlementReference": "SETTL-PUN-20261015-423",
+      "sellerId": "creator_settle_strict_1792064142715",
+      "sellerName": "Artisan",
+      "orderIds": [
+        "ord_strict_deliv_1792064142715"
+      ],
+      "amount": 1050,
+      "payoutStatus": "completed",
+      "utrNumber": "HDFCR2064142723586",
+      "gatewayPayoutId": "pout_rzp_1792064142723",
+      "bankAccountMasked": "•••• •••• •••• 8190",
+      "bankName": "ICICI Bank",
+      "failureReason": null,
+      "processedAt": "2026-10-15T11:35:42.723Z",
+      "createdAt": "2026-10-15T11:35:42.723Z",
+      "updatedAt": "2026-10-15T11:35:42.723Z"
+    },
+    {
+      "id": "set_1792064081717_534",
+      "settlementReference": "SETTL-PUN-20261015-498",
+      "sellerId": "creator_settle_strict_1792064081704",
+      "sellerName": "Artisan",
+      "orderIds": [
+        "ord_strict_deliv_1792064081704"
+      ],
+      "amount": 1050,
+      "payoutStatus": "completed",
+      "utrNumber": "HDFCR2064081717108",
+      "gatewayPayoutId": "pout_rzp_1792064081717",
+      "bankAccountMasked": "•••• •••• •••• 8190",
+      "bankName": "ICICI Bank",
+      "failureReason": null,
+      "processedAt": "2026-10-15T11:34:41.717Z",
+      "createdAt": "2026-10-15T11:34:41.717Z",
+      "updatedAt": "2026-10-15T11:34:41.717Z"
+    },
+    {
+      "id": "set_1792037925638_93",
+      "settlementReference": "SETTL-PUN-20261015-231",
+      "sellerId": "creator_double_settle_test",
+      "sellerName": "Priya Sharma",
+      "orderIds": [
+        "ord_unfulfilled_1792037925633"
+      ],
+      "amount": 850,
+      "payoutStatus": "completed",
+      "utrNumber": "HDFCR2037925638816",
+      "gatewayPayoutId": "pout_rzp_1792037925638",
+      "bankAccountMasked": "•••• •••• •••• 2810",
+      "bankName": "HDFC Bank",
+      "failureReason": null,
+      "processedAt": "2026-10-15T04:18:45.638Z",
+      "createdAt": "2026-10-15T04:18:45.638Z",
+      "updatedAt": "2026-10-15T04:18:45.638Z"
+    },
+    {
+      "id": "set_1792036721768_461",
+      "settlementReference": "SETTL-PUN-20261015-451",
+      "sellerId": "creator_double_settle_test",
+      "sellerName": "Priya Sharma",
+      "orderIds": [
+        "ord_unfulfilled_1792036721764"
+      ],
+      "amount": 850,
+      "payoutStatus": "completed",
+      "utrNumber": "HDFCR2036721768991",
+      "gatewayPayoutId": "pout_rzp_1792036721768",
+      "bankAccountMasked": "•••• •••• •••• 2810",
+      "bankName": "HDFC Bank",
+      "failureReason": null,
+      "processedAt": "2026-10-15T03:58:41.768Z",
+      "createdAt": "2026-10-15T03:58:41.768Z",
+      "updatedAt": "2026-10-15T03:58:41.768Z"
+    },
+    {
+      "id": "set_ref_98012",
+      "settlementReference": "SETTL-PUN-20261011-001",
+      "sellerId": "creator_1",
+      "sellerName": "Ananya Mukherjee",
+      "orderIds": [
+        "kg_ord_1001"
+      ],
+      "amount": 1035.12,
+      "payoutStatus": "completed",
+      "utrNumber": "HDFCR202610119821034",
+      "gatewayPayoutId": "pout_rzp_98012_succ",
+      "failureReason": null,
+      "createdAt": "2026-10-12T03:58:41.739Z",
+      "processedAt": "2026-10-12T03:58:41.739Z"
+    }
+  ],
+  "webhook_logs": [
+    {
+      "id": "wh_1792064142483_625",
+      "gateway": "razorpay",
+      "event": "payment.captured",
+      "payload": {
+        "event": "payment.captured",
+        "payload": {
+          "payment": {
+            "entity": {
+              "id": "pay_dup_hook_1792064142469",
+              "order_id": "order_dup_hook_1792064142469",
+              "amount": 95000,
+              "currency": "INR",
+              "status": "captured",
+              "method": "upi"
+            }
+          }
+        }
+      },
+      "signatureVerified": true,
+      "status": "accepted",
+      "error": null,
+      "createdAt": "2026-10-15T11:35:42.483Z",
+      "updatedAt": "2026-10-15T11:35:42.483Z"
+    },
+    {
+      "id": "wh_1792064142474_469",
+      "gateway": "razorpay",
+      "event": "payment.captured",
+      "payload": {
+        "event": "payment.captured",
+        "payload": {
+          "payment": {
+            "entity": {
+              "id": "pay_dup_hook_1792064142469",
+              "order_id": "order_dup_hook_1792064142469",
+              "amount": 95000,
+              "currency": "INR",
+              "status": "captured",
+              "method": "upi"
+            }
+          }
+        }
+      },
+      "signatureVerified": true,
+      "status": "accepted",
+      "error": null,
+      "createdAt": "2026-10-15T11:35:42.474Z",
+      "updatedAt": "2026-10-15T11:35:42.474Z"
+    },
+    {
+      "id": "wh_1792064081101_752",
+      "gateway": "razorpay",
+      "event": "payment.captured",
+      "payload": {
+        "event": "payment.captured",
+        "payload": {
+          "payment": {
+            "entity": {
+              "id": "pay_dup_hook_1792064081090",
+              "order_id": "order_dup_hook_1792064081090",
+              "amount": 95000,
+              "currency": "INR",
+              "status": "captured",
+              "method": "upi"
+            }
+          }
+        }
+      },
+      "signatureVerified": true,
+      "status": "accepted",
+      "error": null,
+      "createdAt": "2026-10-15T11:34:41.101Z",
+      "updatedAt": "2026-10-15T11:34:41.101Z"
+    },
+    {
+      "id": "wh_1792064081094_630",
+      "gateway": "razorpay",
+      "event": "payment.captured",
+      "payload": {
+        "event": "payment.captured",
+        "payload": {
+          "payment": {
+            "entity": {
+              "id": "pay_dup_hook_1792064081090",
+              "order_id": "order_dup_hook_1792064081090",
+              "amount": 95000,
+              "currency": "INR",
+              "status": "captured",
+              "method": "upi"
+            }
+          }
+        }
+      },
+      "signatureVerified": true,
+      "status": "accepted",
+      "error": null,
+      "createdAt": "2026-10-15T11:34:41.094Z",
+      "updatedAt": "2026-10-15T11:34:41.094Z"
+    },
+    {
+      "id": "wh_1792037925655_474",
+      "gateway": "razorpay",
+      "event": "payment.captured",
+      "payload": {
+        "event": "payment.captured",
+        "payload": {
+          "payment": {
+            "entity": {
+              "id": "pay_hook_1792037925653",
+              "order_id": "order_hook_1792037925653",
+              "amount": 50000,
+              "currency": "INR",
+              "status": "captured",
+              "method": "upi"
+            }
+          }
+        }
+      },
+      "signatureVerified": false,
+      "status": "rejected",
+      "error": "Invalid webhook signature",
+      "createdAt": "2026-10-15T04:18:45.655Z",
+      "updatedAt": "2026-10-15T04:18:45.655Z"
+    },
+    {
+      "id": "wh_1792037925653_491",
+      "gateway": "razorpay",
+      "event": "payment.captured",
+      "payload": {
+        "event": "payment.captured",
+        "payload": {
+          "payment": {
+            "entity": {
+              "id": "pay_hook_1792037925653",
+              "order_id": "order_hook_1792037925653",
+              "amount": 50000,
+              "currency": "INR",
+              "status": "captured",
+              "method": "upi"
+            }
+          }
+        }
+      },
+      "signatureVerified": true,
+      "status": "accepted",
+      "error": null,
+      "createdAt": "2026-10-15T04:18:45.653Z",
+      "updatedAt": "2026-10-15T04:18:45.653Z"
+    },
+    {
+      "id": "wh_1792036721782_104",
+      "gateway": "razorpay",
+      "event": "payment.captured",
+      "payload": {
+        "event": "payment.captured",
+        "payload": {
+          "payment": {
+            "entity": {
+              "id": "pay_hook_1792036721780",
+              "order_id": "order_hook_1792036721780",
+              "amount": 50000,
+              "currency": "INR",
+              "status": "captured",
+              "method": "upi"
+            }
+          }
+        }
+      },
+      "signatureVerified": false,
+      "status": "rejected",
+      "error": "Invalid webhook signature",
+      "createdAt": "2026-10-15T03:58:41.782Z",
+      "updatedAt": "2026-10-15T03:58:41.782Z"
+    },
+    {
+      "id": "wh_1792036721780_138",
+      "gateway": "razorpay",
+      "event": "payment.captured",
+      "payload": {
+        "event": "payment.captured",
+        "payload": {
+          "payment": {
+            "entity": {
+              "id": "pay_hook_1792036721780",
+              "order_id": "order_hook_1792036721780",
+              "amount": 50000,
+              "currency": "INR",
+              "status": "captured",
+              "method": "upi"
+            }
+          }
+        }
+      },
+      "signatureVerified": true,
+      "status": "accepted",
+      "error": null,
+      "createdAt": "2026-10-15T03:58:41.780Z",
+      "updatedAt": "2026-10-15T03:58:41.780Z"
+    }
+  ],
+  "audit_logs": [
+    {
+      "id": "audit_1792211699411_1195",
+      "entityType": "order",
+      "entityId": "kg_ord_1792211699174",
+      "action": "PAYMENT_ORDER_CREATED",
+      "actorId": "usr_guest",
+      "actorRole": "customer",
+      "details": {
+        "gatewayOrderId": "order_1792211699189_2176",
+        "amountInPaise": 79800,
+        "attemptNumber": 1
+      },
+      "createdAt": "2026-10-17T04:34:59.411Z",
+      "updatedAt": "2026-10-17T04:34:59.411Z"
+    },
+    {
+      "id": "audit_1792211699181_4219",
+      "entityType": "order",
+      "entityId": "kg_ord_1792211699174",
+      "action": "ORDER_CREATED",
+      "actorId": "guest",
+      "actorRole": "customer",
+      "details": {
+        "totalAmount": 798
+      },
+      "createdAt": "2026-10-17T04:34:59.181Z",
+      "updatedAt": "2026-10-17T04:34:59.181Z"
+    },
+    {
+      "id": "audit_1792064515237_9368",
+      "entityType": "order",
+      "entityId": "kg_ord_1792064515044",
+      "action": "PAYMENT_ORDER_CREATED",
+      "actorId": "usr_guest",
+      "actorRole": "customer",
+      "details": {
+        "gatewayOrderId": "order_1792064515063_8811",
+        "amountInPaise": 34800,
+        "attemptNumber": 1
+      },
+      "createdAt": "2026-10-15T11:41:55.237Z",
+      "updatedAt": "2026-10-15T11:41:55.237Z"
+    },
+    {
+      "id": "audit_1792064515050_4852",
+      "entityType": "order",
+      "entityId": "kg_ord_1792064515044",
+      "action": "ORDER_CREATED",
+      "actorId": "guest",
+      "actorRole": "customer",
+      "details": {
+        "totalAmount": 348
+      },
+      "createdAt": "2026-10-15T11:41:55.050Z",
+      "updatedAt": "2026-10-15T11:41:55.050Z"
+    },
+    {
+      "id": "audit_1792064142728_8210",
+      "entityType": "settlement",
+      "entityId": "set_1792064142723_50",
+      "action": "SELLER_PAYOUT_SETTLED",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "sellerId": "creator_settle_strict_1792064142715",
+        "amount": 1050,
+        "orderCount": 1,
+        "utrNumber": "HDFCR2064142723586"
+      },
+      "createdAt": "2026-10-15T11:35:42.728Z",
+      "updatedAt": "2026-10-15T11:35:42.728Z"
+    },
+    {
+      "id": "audit_1792064142691_8536",
+      "entityType": "refund",
+      "entityId": "ref_1792064142682_46",
+      "action": "REFUND_PROCESSED",
+      "actorId": "customer",
+      "actorRole": "customer",
+      "details": {
+        "orderId": "test_ord_refund_flow_1792064142679",
+        "amount": 1500,
+        "gatewayRefundId": "rfnd_1792064142682_9204",
+        "reason": "Customer cancelled prior to dispatch"
+      },
+      "createdAt": "2026-10-15T11:35:42.691Z",
+      "updatedAt": "2026-10-15T11:35:42.691Z"
+    },
+    {
+      "id": "audit_1792064142676_2033",
+      "entityType": "order",
+      "entityId": "test_ord_idemp_key_1792064142649",
+      "action": "PAYMENT_ORDER_CREATED",
+      "actorId": "guest",
+      "actorRole": "customer",
+      "details": {
+        "gatewayOrderId": "order_1792064142649_8604",
+        "amountInPaise": 220000,
+        "attemptNumber": 1
+      },
+      "createdAt": "2026-10-15T11:35:42.676Z",
+      "updatedAt": "2026-10-15T11:35:42.677Z"
+    },
+    {
+      "id": "audit_1792064142646_2087",
+      "entityType": "order",
+      "entityId": "test_ord_retry_1792064142485",
+      "action": "PAYMENT_ORDER_CREATED",
+      "actorId": "guest",
+      "actorRole": "customer",
+      "details": {
+        "gatewayOrderId": "order_1792064142617_3650",
+        "amountInPaise": 180000,
+        "attemptNumber": 2
+      },
+      "createdAt": "2026-10-15T11:35:42.646Z",
+      "updatedAt": "2026-10-15T11:35:42.646Z"
+    },
+    {
+      "id": "audit_1792064142613_9063",
+      "entityType": "order",
+      "entityId": "test_ord_retry_1792064142485",
+      "action": "PAYMENT_ORDER_CREATED",
+      "actorId": "guest",
+      "actorRole": "customer",
+      "details": {
+        "gatewayOrderId": "order_1792064142488_4949",
+        "amountInPaise": 180000,
+        "attemptNumber": 1
+      },
+      "createdAt": "2026-10-15T11:35:42.613Z",
+      "updatedAt": "2026-10-15T11:35:42.613Z"
+    },
+    {
+      "id": "audit_1792064142481_3325",
+      "entityType": "order",
+      "entityId": "test_ord_dup_hook_1792064142469",
+      "action": "PAYMENT_VERIFIED_SUCCESS",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "gatewayOrderId": "order_dup_hook_1792064142469",
+        "gatewayPaymentId": "pay_dup_hook_1792064142469",
+        "amount": 950
+      },
+      "createdAt": "2026-10-15T11:35:42.481Z",
+      "updatedAt": "2026-10-15T11:35:42.481Z"
+    },
+    {
+      "id": "audit_1792064142467_4207",
+      "entityType": "order",
+      "entityId": "test_ord_delayed_hook_1792064142457",
+      "action": "PAYMENT_VERIFIED_SUCCESS",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "gatewayOrderId": "order_dh_1792064142457",
+        "gatewayPaymentId": "pay_dh_1792064142457",
+        "amount": 1400
+      },
+      "createdAt": "2026-10-15T11:35:42.467Z",
+      "updatedAt": "2026-10-15T11:35:42.467Z"
+    },
+    {
+      "id": "audit_1792064142452_5224",
+      "entityType": "order",
+      "entityId": "test_ord_fail_1792064142446",
+      "action": "PAYMENT_SIGNATURE_INVALID",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "razorpayOrderId": "order_test_fail_1792064142446",
+        "razorpayPaymentId": "pay_test_fail_1792064142446"
+      },
+      "createdAt": "2026-10-15T11:35:42.452Z",
+      "updatedAt": "2026-10-15T11:35:42.452Z"
+    },
+    {
+      "id": "audit_1792064142443_8069",
+      "entityType": "order",
+      "entityId": "test_ord_success_1792064142431",
+      "action": "PAYMENT_VERIFIED_SUCCESS",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "gatewayOrderId": "order_test_1792064142431",
+        "gatewayPaymentId": "pay_test_1792064142431",
+        "amount": 1200
+      },
+      "createdAt": "2026-10-15T11:35:42.443Z",
+      "updatedAt": "2026-10-15T11:35:42.443Z"
+    },
+    {
+      "id": "audit_1792064081722_8254",
+      "entityType": "settlement",
+      "entityId": "set_1792064081717_534",
+      "action": "SELLER_PAYOUT_SETTLED",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "sellerId": "creator_settle_strict_1792064081704",
+        "amount": 1050,
+        "orderCount": 1,
+        "utrNumber": "HDFCR2064081717108"
+      },
+      "createdAt": "2026-10-15T11:34:41.722Z",
+      "updatedAt": "2026-10-15T11:34:41.722Z"
+    },
+    {
+      "id": "audit_1792064081688_7634",
+      "entityType": "refund",
+      "entityId": "ref_1792064081679_873",
+      "action": "REFUND_PROCESSED",
+      "actorId": "customer",
+      "actorRole": "customer",
+      "details": {
+        "orderId": "test_ord_refund_flow_1792064081674",
+        "amount": 1500,
+        "gatewayRefundId": "rfnd_1792064081679_7512",
+        "reason": "Customer cancelled prior to dispatch"
+      },
+      "createdAt": "2026-10-15T11:34:41.688Z",
+      "updatedAt": "2026-10-15T11:34:41.688Z"
+    },
+    {
+      "id": "audit_1792064081672_3000",
+      "entityType": "order",
+      "entityId": "test_ord_idemp_key_1792064081647",
+      "action": "PAYMENT_ORDER_CREATED",
+      "actorId": "guest",
+      "actorRole": "customer",
+      "details": {
+        "gatewayOrderId": "order_1792064081647_5561",
+        "amountInPaise": 220000,
+        "attemptNumber": 1
+      },
+      "createdAt": "2026-10-15T11:34:41.672Z",
+      "updatedAt": "2026-10-15T11:34:41.672Z"
+    },
+    {
+      "id": "audit_1792064081644_861",
+      "entityType": "order",
+      "entityId": "test_ord_retry_1792064081103",
+      "action": "PAYMENT_ORDER_CREATED",
+      "actorId": "guest",
+      "actorRole": "customer",
+      "details": {
+        "gatewayOrderId": "order_1792064081599_9360",
+        "amountInPaise": 180000,
+        "attemptNumber": 2
+      },
+      "createdAt": "2026-10-15T11:34:41.644Z",
+      "updatedAt": "2026-10-15T11:34:41.644Z"
+    },
+    {
+      "id": "audit_1792064081593_8354",
+      "entityType": "order",
+      "entityId": "test_ord_retry_1792064081103",
+      "action": "PAYMENT_ORDER_CREATED",
+      "actorId": "guest",
+      "actorRole": "customer",
+      "details": {
+        "gatewayOrderId": "order_1792064081105_4380",
+        "amountInPaise": 180000,
+        "attemptNumber": 1
+      },
+      "createdAt": "2026-10-15T11:34:41.593Z",
+      "updatedAt": "2026-10-15T11:34:41.593Z"
+    },
+    {
+      "id": "audit_1792064081100_7763",
+      "entityType": "order",
+      "entityId": "test_ord_dup_hook_1792064081090",
+      "action": "PAYMENT_VERIFIED_SUCCESS",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "gatewayOrderId": "order_dup_hook_1792064081090",
+        "gatewayPaymentId": "pay_dup_hook_1792064081090",
+        "amount": 950
+      },
+      "createdAt": "2026-10-15T11:34:41.100Z",
+      "updatedAt": "2026-10-15T11:34:41.100Z"
+    },
+    {
+      "id": "audit_1792064081087_133",
+      "entityType": "order",
+      "entityId": "test_ord_delayed_hook_1792064081077",
+      "action": "PAYMENT_VERIFIED_SUCCESS",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "gatewayOrderId": "order_dh_1792064081077",
+        "gatewayPaymentId": "pay_dh_1792064081077",
+        "amount": 1400
+      },
+      "createdAt": "2026-10-15T11:34:41.087Z",
+      "updatedAt": "2026-10-15T11:34:41.087Z"
+    },
+    {
+      "id": "audit_1792064081070_5154",
+      "entityType": "order",
+      "entityId": "test_ord_fail_1792064081065",
+      "action": "PAYMENT_SIGNATURE_INVALID",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "razorpayOrderId": "order_test_fail_1792064081065",
+        "razorpayPaymentId": "pay_test_fail_1792064081065"
+      },
+      "createdAt": "2026-10-15T11:34:41.070Z",
+      "updatedAt": "2026-10-15T11:34:41.070Z"
+    },
+    {
+      "id": "audit_1792064081063_9979",
+      "entityType": "order",
+      "entityId": "test_ord_success_1792064081052",
+      "action": "PAYMENT_VERIFIED_SUCCESS",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "gatewayOrderId": "order_test_1792064081052",
+        "gatewayPaymentId": "pay_test_1792064081052",
+        "amount": 1200
+      },
+      "createdAt": "2026-10-15T11:34:41.063Z",
+      "updatedAt": "2026-10-15T11:34:41.063Z"
+    },
+    {
+      "id": "audit_1792061821954_9065",
+      "entityType": "order",
+      "entityId": "kg_ord_1792061821839",
+      "action": "PAYMENT_VERIFIED_SUCCESS",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "gatewayOrderId": "order_1792061821858_1491",
+        "gatewayPaymentId": "pay_rzp_1792061821929_1914",
+        "amount": 899
+      },
+      "createdAt": "2026-10-15T10:57:01.954Z",
+      "updatedAt": "2026-10-15T10:57:01.954Z"
+    },
+    {
+      "id": "audit_1792061821859_9500",
+      "entityType": "order",
+      "entityId": "kg_ord_1792061821839",
+      "action": "PAYMENT_ORDER_CREATED",
+      "actorId": "usr_guest",
+      "actorRole": "customer",
+      "details": {
+        "gatewayOrderId": "order_1792061821858_1491",
+        "amountInPaise": 89900,
+        "attemptNumber": 1
+      },
+      "createdAt": "2026-10-15T10:57:01.859Z",
+      "updatedAt": "2026-10-15T10:57:01.860Z"
+    },
+    {
+      "id": "audit_1792061821850_6901",
+      "entityType": "order",
+      "entityId": "kg_ord_1792061821839",
+      "action": "ORDER_CREATED",
+      "actorId": "guest",
+      "actorRole": "customer",
+      "details": {
+        "totalAmount": 899
+      },
+      "createdAt": "2026-10-15T10:57:01.850Z",
+      "updatedAt": "2026-10-15T10:57:01.850Z"
+    },
+    {
+      "id": "audit_1792049367288_7780",
+      "entityType": "order",
+      "entityId": "kg_ord_1792049367152",
+      "action": "PAYMENT_VERIFIED_SUCCESS",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "gatewayOrderId": "order_1792049367174_5254",
+        "gatewayPaymentId": "pay_rzp_1792049367244_5464",
+        "amount": 1347
+      },
+      "createdAt": "2026-10-15T07:29:27.288Z",
+      "updatedAt": "2026-10-15T07:29:27.288Z"
+    },
+    {
+      "id": "audit_1792049367176_9422",
+      "entityType": "order",
+      "entityId": "kg_ord_1792049367152",
+      "action": "PAYMENT_ORDER_CREATED",
+      "actorId": "usr_guest",
+      "actorRole": "customer",
+      "details": {
+        "gatewayOrderId": "order_1792049367174_5254",
+        "amountInPaise": 134700,
+        "attemptNumber": 1
+      },
+      "createdAt": "2026-10-15T07:29:27.176Z",
+      "updatedAt": "2026-10-15T07:29:27.176Z"
+    },
+    {
+      "id": "audit_1792049367163_13",
+      "entityType": "order",
+      "entityId": "kg_ord_1792049367152",
+      "action": "ORDER_CREATED",
+      "actorId": "guest",
+      "actorRole": "customer",
+      "details": {
+        "totalAmount": 1347
+      },
+      "createdAt": "2026-10-15T07:29:27.163Z",
+      "updatedAt": "2026-10-15T07:29:27.163Z"
+    },
+    {
+      "id": "audit_1792038940874_8810",
+      "entityType": "order",
+      "entityId": "kg_ord_1792038940847",
+      "action": "PAYMENT_VERIFIED_SUCCESS",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "gatewayOrderId": "order_1792038940857_1880",
+        "gatewayPaymentId": "pay_test_verified_123",
+        "amount": 49
+      },
+      "createdAt": "2026-10-15T04:35:40.874Z",
+      "updatedAt": "2026-10-15T04:35:40.874Z"
+    },
+    {
+      "id": "audit_1792038940859_9224",
+      "entityType": "order",
+      "entityId": "kg_ord_1792038940847",
+      "action": "PAYMENT_ORDER_CREATED",
+      "actorId": "usr_guest",
+      "actorRole": "customer",
+      "details": {
+        "gatewayOrderId": "order_1792038940857_1880",
+        "amountInPaise": 4900,
+        "attemptNumber": 1
+      },
+      "createdAt": "2026-10-15T04:35:40.859Z",
+      "updatedAt": "2026-10-15T04:35:40.859Z"
+    },
+    {
+      "id": "audit_1792038940851_5265",
+      "entityType": "order",
+      "entityId": "kg_ord_1792038940847",
+      "action": "ORDER_CREATED",
+      "actorId": "guest",
+      "actorRole": "customer",
+      "details": {
+        "totalAmount": 49
+      },
+      "createdAt": "2026-10-15T04:35:40.851Z",
+      "updatedAt": "2026-10-15T04:35:40.851Z"
+    },
+    {
+      "id": "audit_1792038839682_3828",
+      "entityType": "order",
+      "entityId": "kg_ord_1792038839667",
+      "action": "PAYMENT_ORDER_CREATED",
+      "actorId": "usr_guest",
+      "actorRole": "customer",
+      "details": {
+        "gatewayOrderId": "order_1792038839680_1744",
+        "amountInPaise": 4900,
+        "attemptNumber": 1
+      },
+      "createdAt": "2026-10-15T04:33:59.682Z",
+      "updatedAt": "2026-10-15T04:33:59.682Z"
+    },
+    {
+      "id": "audit_1792038839672_8165",
+      "entityType": "order",
+      "entityId": "kg_ord_1792038839667",
+      "action": "ORDER_CREATED",
+      "actorId": "guest",
+      "actorRole": "customer",
+      "details": {
+        "totalAmount": 49
+      },
+      "createdAt": "2026-10-15T04:33:59.672Z",
+      "updatedAt": "2026-10-15T04:33:59.672Z"
+    },
+    {
+      "id": "audit_1792037925651_315",
+      "entityType": "refund",
+      "entityId": "ref_1792037925646_633",
+      "action": "REFUND_PROCESSED",
+      "actorId": "customer",
+      "actorRole": "customer",
+      "details": {
+        "orderId": "ord_refund_1792037925643",
+        "amount": 999,
+        "gatewayRefundId": "rfnd_1792037925646_6296",
+        "reason": "Customer cancelled before dispatch"
+      },
+      "createdAt": "2026-10-15T04:18:45.651Z",
+      "updatedAt": "2026-10-15T04:18:45.651Z"
+    },
+    {
+      "id": "audit_1792037925642_9489",
+      "entityType": "settlement",
+      "entityId": "set_1792037925638_93",
+      "action": "SELLER_PAYOUT_SETTLED",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "sellerId": "creator_double_settle_test",
+        "amount": 850,
+        "orderCount": 1,
+        "utrNumber": "HDFCR2037925638816"
+      },
+      "createdAt": "2026-10-15T04:18:45.642Z",
+      "updatedAt": "2026-10-15T04:18:45.642Z"
+    },
+    {
+      "id": "audit_1792037925626_6789",
+      "entityType": "order",
+      "entityId": "test_ord_sig_1792037925615",
+      "action": "PAYMENT_VERIFIED_SUCCESS",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "gatewayOrderId": "order_test_1792037925615",
+        "gatewayPaymentId": "pay_test_1792037925615",
+        "amount": 1000
+      },
+      "createdAt": "2026-10-15T04:18:45.626Z",
+      "updatedAt": "2026-10-15T04:18:45.626Z"
+    },
+    {
+      "id": "audit_1792037925620_3746",
+      "entityType": "order",
+      "entityId": "test_ord_sig_1792037925615",
+      "action": "PAYMENT_SIGNATURE_INVALID",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "razorpayOrderId": "order_test_1792037925615",
+        "razorpayPaymentId": "pay_test_1792037925615"
+      },
+      "createdAt": "2026-10-15T04:18:45.620Z",
+      "updatedAt": "2026-10-15T04:18:45.620Z"
+    },
+    {
+      "id": "audit_1792037925613_1978",
+      "entityType": "order",
+      "entityId": "test_ord_idemp_1792037925610",
+      "action": "PAYMENT_ORDER_CREATED",
+      "actorId": "guest",
+      "actorRole": "customer",
+      "details": {
+        "gatewayOrderId": "order_1792037925610_4033",
+        "amountInPaise": 150000,
+        "attemptNumber": 1
+      },
+      "createdAt": "2026-10-15T04:18:45.614Z",
+      "updatedAt": "2026-10-15T04:18:45.614Z"
+    },
+    {
+      "id": "audit_1792036721779_5528",
+      "entityType": "refund",
+      "entityId": "ref_1792036721775_379",
+      "action": "REFUND_PROCESSED",
+      "actorId": "customer",
+      "actorRole": "customer",
+      "details": {
+        "orderId": "ord_refund_1792036721772",
+        "amount": 999,
+        "gatewayRefundId": "rfnd_1792036721775_5063",
+        "reason": "Customer cancelled before dispatch"
+      },
+      "createdAt": "2026-10-15T03:58:41.779Z",
+      "updatedAt": "2026-10-15T03:58:41.779Z"
+    },
+    {
+      "id": "audit_1792036721771_3426",
+      "entityType": "settlement",
+      "entityId": "set_1792036721768_461",
+      "action": "SELLER_PAYOUT_SETTLED",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "sellerId": "creator_double_settle_test",
+        "amount": 850,
+        "orderCount": 1,
+        "utrNumber": "HDFCR2036721768991"
+      },
+      "createdAt": "2026-10-15T03:58:41.771Z",
+      "updatedAt": "2026-10-15T03:58:41.771Z"
+    },
+    {
+      "id": "audit_1792036721758_1815",
+      "entityType": "order",
+      "entityId": "test_ord_sig_1792036721750",
+      "action": "PAYMENT_VERIFIED_SUCCESS",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "gatewayOrderId": "order_test_1792036721750",
+        "gatewayPaymentId": "pay_test_1792036721750",
+        "amount": 1000
+      },
+      "createdAt": "2026-10-15T03:58:41.758Z",
+      "updatedAt": "2026-10-15T03:58:41.758Z"
+    },
+    {
+      "id": "audit_1792036721754_6456",
+      "entityType": "order",
+      "entityId": "test_ord_sig_1792036721750",
+      "action": "PAYMENT_SIGNATURE_INVALID",
+      "actorId": "system",
+      "actorRole": "system",
+      "details": {
+        "razorpayOrderId": "order_test_1792036721750",
+        "razorpayPaymentId": "pay_test_1792036721750"
+      },
+      "createdAt": "2026-10-15T03:58:41.754Z",
+      "updatedAt": "2026-10-15T03:58:41.754Z"
+    },
+    {
+      "id": "audit_1792036721749_5747",
+      "entityType": "order",
+      "entityId": "test_ord_idemp_1792036721744",
+      "action": "PAYMENT_ORDER_CREATED",
+      "actorId": "guest",
+      "actorRole": "customer",
+      "details": {
+        "gatewayOrderId": "order_1792036721744_4048",
+        "amountInPaise": 150000,
+        "attemptNumber": 1
+      },
+      "createdAt": "2026-10-15T03:58:41.749Z",
+      "updatedAt": "2026-10-15T03:58:41.749Z"
+    },
+    {
+      "id": "audit_init_1",
+      "entityType": "system",
+      "entityId": "kaarigaar_marketplace",
+      "action": "SYSTEM_INITIALIZED",
+      "actorId": "admin_sys",
+      "actorRole": "admin",
+      "details": {
+        "message": "KARIGAAR Payment & Payout Engine online in sandbox mode"
+      },
+      "createdAt": "2026-10-08T03:58:41.739Z"
+    }
+  ]
+}

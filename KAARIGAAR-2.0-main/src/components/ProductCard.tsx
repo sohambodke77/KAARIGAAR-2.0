@@ -51,7 +51,6 @@ export function ProductCard({ product, width }: ProductCardProps) {
         width !== undefined && { width: width as any },
         pressed && styles.cardPressed,
       ]}
-      accessibilityRole="button"
       accessibilityLabel={`${product.name} by ${product.creatorName}`}
     >
       {/* Image Container */}

@@ -22,4 +22,5 @@ export type AppStackParamList = {
   CreatorProfile: { creatorId: string };
   SellerDashboard: undefined;
   AddProduct: undefined;
+  AdminDashboard: undefined;
 };
